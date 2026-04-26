@@ -21,6 +21,8 @@ import ProcessSection1 from "../../Components/ProcessSection/ProcessSection1";
 import ContactSection from "../../Components/ContactSection";
 import LocationMap from "../../Components/LocationMap/Index";
 import ServiceSection3 from "../../Components/Service/ServiceSection3";
+import HomeCloneSections from "../../Components/HomeClone/HomeCloneSections";
+import { FaPhone } from "react-icons/fa6";
 
 const heroData = {
   primarySlider: [
@@ -972,71 +974,133 @@ const blogsData = {
 };
 
 const MainHome = () => {
+  const showLegacySections = false;
+
   return (
     <>
-      {/* End Header Section */}
       {/* Start Hero Section */}
       <HeroSection data={heroData} />
       {/* End Hero Section */}
-      {/* Start CTA Section */}
-      <Section className="cs_cta cs_style_1 cs_type_1 position-relative overflow-hidden">
-        <CtaSection3 data={ctaData3} />
-      </Section>
+      <main className="gd_clone_home">
+        <section className="gd_intro_clone_section">
+          <div className="gd_intro_call_card">
+            <div className="gd_intro_call_text">
+              <FaPhone aria-hidden="true" />
+              <span>Call Our Dentist For A Consultation</span>
+            </div>
+            <div className="gd_intro_hours">
+              <h3>WORKING HOURS</h3>
+              <p>Mon - Sat: 11:30 AM - 11:30 PM</p>
+              <p>Sunday: &nbsp;&nbsp; 02:00 PM - 11:30 PM</p>
+            </div>
+          </div>
 
-      {/* End CTA Section */}
-      {/* Start About Section */}
-      <Section
-        topSpaceLg="80"
-        topSpaceMd="120"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_about cs_style_1 position-relative"
-      >
-        <About data={aboutData} />
-      </Section>
+          <div className="container">
+            <div className="gd_intro_content">
+              <div className="gd_intro_text">
+                <h1>
+                  Welcome to Oradent Dental Clinic &ndash; Your Family Dentist
+                  in Islamabad
+                </h1>
+                <p>
+                  <span>Oradent Dental Clinic</span> is a trusted destination
+                  for modern and patient-focused dental care in Islamabad. Since
+                  2018, our experienced dentists have helped families maintain
+                  healthy teeth and confident smiles through safe and gentle
+                  treatments.
+                </p>
+                <p>
+                  We serve patients from two convenient locations: F-8 Markaz
+                  Islamabad and I-8 Markaz Islamabad, making professional dental
+                  care easy to access no matter where you are.
+                </p>
+                <p>
+                  From routine checkups and teeth cleaning to advanced
+                  procedures like dental implants and root canal therapy, our
+                  team provides personalized care using modern dental
+                  technology. At Oradent Dental Clinic, you&rsquo;re not just a
+                  patient&mdash;you&rsquo;re part of our dental family, and
+                  every visit is designed to be comfortable and stress-free.
+                </p>
+              </div>
 
-      {/* End About Section */}
-      {/* Start Service Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_gray_bg"
-      >
-        <ServiceSection3 data={homeV3ServiceSectionData} />
-      </Section>
+              <div className="gd_intro_image">
+                <img
+                  src="/assets/img/oradent-intro-clinic.jpg"
+                  alt="Modern dental clinic waiting area"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-      {/* End Service Section */}
-      {/* Start Medical Solution Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_choose_us_section"
-      >
-        <MedicalSolution2 data={homeV3MedicalSolutionData} />
-      </Section>
+        <HomeCloneSections />
+      </main>
 
-      {/* End Medical Solution Section */}
-      {/* Start Doctors Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        className="cs_team_section position-relative"
-      >
-        <TeamSection
-          variant={"cs_pagination cs_style_2 cs_accent_color"}
-          bgColor={true}
-          data={teamData}
-        />
-      </Section>
+      {/* Existing home sections are disabled while screenshot sections are cloned. */}
+      {showLegacySections && (
+        <>
+          {/* End Header Section */}
 
-      {/* End Doctors Section */}
+          {/* Start CTA Section */}
+          <Section className="cs_cta cs_style_1 cs_type_1 position-relative overflow-hidden">
+            <CtaSection3 data={ctaData3} />
+          </Section>
 
-      {/* Start Timeline Section */}
-      {/* <Section
+          {/* End CTA Section */}
+          {/* Start About Section */}
+          <Section
+            topSpaceLg="80"
+            topSpaceMd="120"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+            className="cs_about cs_style_1 position-relative"
+          >
+            <About data={aboutData} />
+          </Section>
+
+          {/* End About Section */}
+          {/* Start Service Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+            className="cs_gray_bg"
+          >
+            <ServiceSection3 data={homeV3ServiceSectionData} />
+          </Section>
+
+          {/* End Service Section */}
+          {/* Start Medical Solution Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+            className="cs_choose_us_section"
+          >
+            <MedicalSolution2 data={homeV3MedicalSolutionData} />
+          </Section>
+
+          {/* End Medical Solution Section */}
+          {/* Start Doctors Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            className="cs_team_section position-relative"
+          >
+            <TeamSection
+              variant={"cs_pagination cs_style_2 cs_accent_color"}
+              bgColor={true}
+              data={teamData}
+            />
+          </Section>
+
+          {/* End Doctors Section */}
+
+          {/* Start Timeline Section */}
+          {/* <Section
         topSpaceLg="70"
         topSpaceMd="110"
         bottomSpaceLg="80"
@@ -1045,78 +1109,80 @@ const MainHome = () => {
         <TimelineSection data={homeV3TimeLineData} />
       </Section> */}
 
-      {/* End Timeline Section */}
-      {/* Start Projects Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_portfolio_showcase"
-      >
-        <ProjectsSection2 data={homeV3ProjectSectionData} />
-      </Section>
+          {/* End Timeline Section */}
+          {/* Start Projects Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+            className="cs_portfolio_showcase"
+          >
+            <ProjectsSection2 data={homeV3ProjectSectionData} />
+          </Section>
 
-      {/* End Projects Section */}
-      {/* Start Brand Section */}
-      {/* <Section topSpaceLg="70" topSpaceMd="110" className="cs_blue_bg">
+          {/* End Projects Section */}
+          {/* Start Brand Section */}
+          {/* <Section topSpaceLg="70" topSpaceMd="110" className="cs_blue_bg">
         <BrandsSlider hr bgColor="cs_blue_bg" data={brandData} />
       </Section> */}
 
-      {/* End Brand Section */}
-      {/* Start Process Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="70"
-        bottomSpaceMd="110"
-        className="cs_process cs_style_1 position-relative"
-      >
-        <ProcessSection1 data={homeV3ProcessData} />
-      </Section>
+          {/* End Brand Section */}
+          {/* Start Process Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="70"
+            bottomSpaceMd="110"
+            className="cs_process cs_style_1 position-relative"
+          >
+            <ProcessSection1 data={homeV3ProcessData} />
+          </Section>
 
-      {/* End Process Section */}
-      {/* Start Contact Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_contact cs_booking_green"
-      >
-        <ContactSection data={homeV3ContactData} />
-      </Section>
+          {/* End Process Section */}
+          {/* Start Contact Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+            className="cs_contact cs_booking_green"
+          >
+            <ContactSection data={homeV3ContactData} />
+          </Section>
 
-      {/* End Contact Section */}
-      {/* Start Location Map */}
-      <LocationMap mapSrc={homeV3MapData.mapSrc} />
+          {/* End Contact Section */}
+          {/* Start Location Map */}
+          <LocationMap mapSrc={homeV3MapData.mapSrc} />
 
-      {/* End Location Map */}
+          {/* End Location Map */}
 
-      {/* Start Dental Solution Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="76"
-        bottomSpaceLg="70"
-        bottomSpaceMd="76"
-        className="cs_bg_filed"
-        backgroundImage="/assets/img/medical_solution_bg_2.jpg"
-      >
-        <DentalSolution data={homeV3DentalSolutionData} />
-      </Section>
+          {/* Start Dental Solution Section */}
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="76"
+            bottomSpaceLg="70"
+            bottomSpaceMd="76"
+            className="cs_bg_filed"
+            backgroundImage="/assets/img/medical_solution_bg_2.jpg"
+          >
+            <DentalSolution data={homeV3DentalSolutionData} />
+          </Section>
 
-      {/* End Dental Solution Section */}
+          {/* End Dental Solution Section */}
 
-      {/* Start Blog Section */}
+          {/* Start Blog Section */}
 
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-      >
-        <BlogSection data={blogsData} />
-      </Section>
+          <Section
+            topSpaceLg="70"
+            topSpaceMd="110"
+            bottomSpaceLg="80"
+            bottomSpaceMd="120"
+          >
+            <BlogSection data={blogsData} />
+          </Section>
+        </>
+      )}
     </>
   );
 };

@@ -8,6 +8,7 @@ const Header = ({ isTopBar, variant }) => {
   const [openMobileSubmenuIndex, setOpenMobileSubmenuIndex] = useState([]);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isSticky, setIsSticky] = useState();
+  const openMarqueeItems = Array(10).fill('24 Hour Open');
   const menu = {
     email: 'info@ghanidental.com',
     branchF8: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi',
@@ -239,6 +240,17 @@ const Header = ({ isTopBar, variant }) => {
             </div>
           </div>
         </div>
+        {isTopBar && (
+          <div className="cs_bottom_header_marquee cs_white_color">
+            <div className="cs_open_marquee_track" aria-label="24 Hour Open">
+              {[...openMarqueeItems, ...openMarqueeItems].map((item, index) => (
+                <span className="cs_open_marquee_item" key={index}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
         {variant == 'cs_type_1' && (
           <div className="cs_main_header_shape">
             <svg
