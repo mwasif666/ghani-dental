@@ -150,11 +150,11 @@ const GdServicesSection = () => {
         <div className="gd_services_top">
           <div className="gd_services_hero">
             <ImageComparison
-              beforeImage="https://images.unsplash.com/photo-1581585504192-04d8f4dab8e6?auto=format&fit=crop&w=900&q=80"
-              afterImage="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80"
-              altBefore="Before dental treatment"
-              altAfter="After dental treatment"
-              className="gd_services_compare"
+              beforeImage="https://images.unsplash.com/photo-1776400985210-92f654712d30?auto=format&fit=crop&w=900&h=650&rect=0,0,2000,3500&q=80"
+              afterImage="https://images.unsplash.com/photo-1776400985210-92f654712d30?auto=format&fit=crop&w=900&h=650&rect=2000,0,2000,3000&q=80"
+              altBefore="Before dental smile transformation"
+              altAfter="After dental smile transformation"
+              className="cs_services_before_after gd_services_compare"
             />
           </div>
           <div className="gd_services_intro">
