@@ -982,11 +982,17 @@ const MainHome = () => {
       <HeroSection data={heroData} />
       {/* End Hero Section */}
       <main className="gd_clone_home">
-        <section className="gd_intro_clone_section">
+        {/* Start Working Hours Strip (below banner) */}
+        <section className="gd_intro_top_strip">
           <div className="gd_intro_call_card">
             <div className="gd_intro_call_text">
               <FaPhone aria-hidden="true" />
-              <span>Call Our Dentist For A Consultation</span>
+              <div className="gd_intro_call_text_inner">
+                <span>Call Our Dentist For A Consultation</span>
+                <a className="gd_intro_call_phone" href="tel:03334425828">
+                  03334425828
+                </a>
+              </div>
             </div>
             <div className="gd_intro_hours">
               <h3>WORKING HOURS</h3>
@@ -994,7 +1000,9 @@ const MainHome = () => {
               <p>Sunday: &nbsp;&nbsp; 02:00 PM - 11:30 PM</p>
             </div>
           </div>
-
+        </section>
+        {/* End Working Hours Strip */}
+        <section className="gd_intro_clone_section">
           <div className="container">
             <div className="gd_intro_content">
               <div className="gd_intro_text">

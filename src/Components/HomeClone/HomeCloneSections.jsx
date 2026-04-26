@@ -10,6 +10,7 @@ import {
   FaRegClock,
   FaChevronDown,
   FaRegStarHalfStroke,
+  FaArrowRight,
 } from "react-icons/fa6";
 import { ImageComparison } from "../ui/image-comparison-slider";
 
@@ -102,41 +103,39 @@ const dentalServices = [
     description:
       "Dental implants are artificial tooth roots made of titanium that are surgically placed into the jawbone beneath the gum line.",
     image:
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80",
   },
   {
     title: "Orthodontics",
     description:
       "Teeth are misaligned, orthodontic treatments such as braces or clear aligners might help you achieve a straighter smile.",
-    image:
-      "https://images.unsplash.com/photo-1581585504192-04d8f4dab8e6?auto=format&fit=crop&w=400&q=80",
+    image: "/assets/img/services/Orthodontics.webp",
   },
   {
     title: "Teeth Whitening",
     description:
       "Professional teeth whitening erases years of stains, making your teeth appear brighter and more youthful.",
     image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
   },
   {
     title: "Denture",
     description:
       "A denture is a removable replacement for missing teeth and surrounding tissues.",
     image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
   },
   {
     title: "Root Canal",
     description: "Dental procedure used to treat infection at the centre of a tooth.",
     image:
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
   },
   {
     title: "Teeth Filling",
     description:
       "Decayed tooth tissue is removed and space filled with a filling material.",
-    image:
-      "https://images.unsplash.com/photo-1606814574232-7e2a8e8c4b6f?auto=format&fit=crop&w=400&q=80",
+    image: "/assets/img/services/dental-crown.webp",
   },
 ];
 
@@ -148,32 +147,46 @@ const GdServicesSection = () => {
     <section className="gd_services_section">
       <div className="container">
         <div className="gd_services_top">
-          <div className="gd_services_hero">
-            <ImageComparison
-              beforeImage="https://images.unsplash.com/photo-1776400985210-92f654712d30?auto=format&fit=crop&w=900&h=650&rect=0,0,2000,3500&q=80"
-              afterImage="https://images.unsplash.com/photo-1776400985210-92f654712d30?auto=format&fit=crop&w=900&h=650&rect=2000,0,2000,3000&q=80"
-              altBefore="Before dental smile transformation"
-              altAfter="After dental smile transformation"
-              className="cs_services_before_after gd_services_compare"
-            />
-          </div>
-          <div className="gd_services_intro">
-            <h2 className="gd_services_title">OUR DENTAL SERVICES</h2>
+           <h2 className="gd_services_title">OUR DENTAL SERVICES</h2>
             <p className="gd_services_subtitle">
               At Oradent Dental Clinic, we provide complete dental care for the
               whole family. Whether you need a simple checkup, a filling, or a
               more advanced treatment, our team is here to guide you with care
               and comfort.
             </p>
+          <div className="gd_services_hero">
+            <ImageComparison
+              beforeImage="/assets/img/before.jpg"
+              afterImage="/assets/img/after.jpg"
+              altBefore="Stained teeth before dental treatment"
+              altAfter="Whitened teeth after dental treatment"
+              className="cs_services_before_after gd_services_compare"
+            />
+          </div>
+          <div className="gd_services_intro">
+           
             <div className="gd_services_featured">
               {featuredServices.map((service, idx) => (
-                <article key={idx} className="gd_service_card gd_service_card_lg">
+                <article
+                  key={idx}
+                  className="gd_service_card gd_service_card_lg"
+                >
                   <div className="gd_service_thumb">
                     <img src={service.image} alt={service.title} />
+                    <span className="gd_service_thumb_badge" aria-hidden="true">
+                      <FaCheck />
+                    </span>
                   </div>
                   <div className="gd_service_body">
                     <h4 className="gd_service_title">{service.title}</h4>
                     <p className="gd_service_text">{service.description}</p>
+                    <a
+                      href="/service/service-details"
+                      className="gd_service_link"
+                    >
+                      <span>Read More</span>
+                      <FaArrowRight aria-hidden="true" />
+                    </a>
                   </div>
                 </article>
               ))}
@@ -183,13 +196,26 @@ const GdServicesSection = () => {
 
         <div className="gd_services_grid">
           {otherServices.map((service, idx) => (
-            <article key={idx} className="gd_service_card">
+            <article
+              key={idx}
+              className="gd_service_card gd_service_card_lg"
+            >
               <div className="gd_service_thumb">
                 <img src={service.image} alt={service.title} />
+                <span className="gd_service_thumb_badge" aria-hidden="true">
+                  <FaCheck />
+                </span>
               </div>
               <div className="gd_service_body">
                 <h4 className="gd_service_title">{service.title}</h4>
                 <p className="gd_service_text">{service.description}</p>
+                <a
+                  href="/service/service-details"
+                  className="gd_service_link"
+                >
+                  <span>Read More</span>
+                  <FaArrowRight aria-hidden="true" />
+                </a>
               </div>
             </article>
           ))}
@@ -386,8 +412,33 @@ const GdTrustBookingSection = () => {
 const testimonialsData = [
   {
     quote:
-      "I had my teeth treatment done at Oradent Clinic, in F-8 Markaz. I had scaling and polishing with Dr. Baria Zareef. She explained everything very well. The staff was very friendly, and the hygiene standards were excellent. Highly recommended.",
+      "I got my scaling and polishing done at Ghani Dental Care Center in Chungi #8, Rawalpindi. Dr. Baria Zareef was extremely professional and explained every step. The clinic is very clean and the staff is super friendly. Highly recommended!",
     name: "Sania Sandhu",
+  },
+  {
+    quote:
+      "Best dental experience I've ever had in Rawalpindi. I had a painful tooth that needed a root canal. Dr. Kaynaat Zamir handled it with so much care that I didn't feel any discomfort. The whole procedure was smooth and the price was very reasonable.",
+    name: "Hamza Iqbal",
+  },
+  {
+    quote:
+      "I took my mother for a dental check-up and filling. The team at Ghani Dental Care was extremely polite and patient with her. The hygiene standards are excellent and the equipment looks modern. We will definitely come back for our family's regular check-ups.",
+    name: "Ayesha Khan",
+  },
+  {
+    quote:
+      "Got my teeth whitening done here and the results are amazing. The staff at Muslim Town branch is very welcoming and they explained the entire process before starting. 24-hour availability is a huge plus for emergency cases.",
+    name: "Usman Tariq",
+  },
+  {
+    quote:
+      "I had braces fitted by Dr. Syed WaliUllah Shah. He is very knowledgeable and answered all my questions about orthodontic treatment. The follow-ups have been hassle-free and the staff always books appointments on time. Truly the best dental clinic in the area.",
+    name: "Maryam Bilal",
+  },
+  {
+    quote:
+      "My experience at Ghani Dental Care Center was wonderful. I got crowns done and they look completely natural. The doctor was patient and made sure I was comfortable throughout. The clinic is well-maintained and the prices are very fair compared to other clinics.",
+    name: "Ali Raza Sheikh",
   },
 ];
 
@@ -710,8 +761,8 @@ const HomeCloneSections = () => (
     <GdServicesSection />
     <GdDentistsSection />
     <GdTrustBookingSection />
-    <GdTestimonialsSection />
     <GdVisitClinicSection />
+    <GdTestimonialsSection />
     <GdFaqSection />
     <GdBlogsSection />
     <GdReviewCtaSection />
