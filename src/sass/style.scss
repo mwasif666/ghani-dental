@@ -1,0 +1,864 @@
+@import 'default/fonts';
+@import 'default/variable';
+@import 'default/typography';
+@import 'common/preloader';
+@import 'common/spacing';
+@import 'common/general';
+@import 'common/slider';
+@import 'common/video-modal';
+@import 'common/header';
+@import 'common/footer';
+@import 'common/sidebar';
+@import 'shortcode/hero';
+@import 'shortcode/banner';
+@import 'shortcode/iconbox';
+@import 'shortcode/post';
+@import 'shortcode/cta';
+@import 'shortcode/testimonial';
+@import 'shortcode/counter';
+@import 'shortcode/casestudie';
+@import 'shortcode/team';
+@import 'shortcode/imagebox';
+@import 'shortcode/pricing';
+@import 'shortcode/card';
+@import 'shortcode/tabs';
+/*--------------------------------
+ Extra css
+ -------------------------------*/
+.cs_hero.cs_style_1 .cs_hero_text {
+  background-color: inherit;
+  padding: inherit;
+  border-radius: inherit;
+  position: inherit;
+}
+.cs_tab_links.cs_style_1 li a span {
+  font-size: 19px;
+}
+.cs_card.cs_style_2 .cs_card_text {
+  max-width: 530px;
+}
+.cs_card.cs_style_2 .cs_card_title {
+  font-size: 27px;
+}
+.home_form_area .cs_form_field {
+  background-color: #fff;
+}
+.about-page-area .about-team hr {
+  display: none;
+}
+
+/*--------------------------------
+ Brand Theme – Ghani Dental
+ Colors: #ff0101, #85c441, #0267ff, #000
+ -------------------------------*/
+
+/* Helper utility classes */
+.cs_green_color {
+  color: var(--green-color);
+}
+.cs_green_bg {
+  background-color: var(--green-color);
+}
+.cs_black_bg {
+  background-color: var(--black);
+}
+
+/* Branch top bar – two locations split by a green angled divider */
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar {
+  background-color: var(--blue-color);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.3em;
+  padding: 0;
+  height: 38px;
+  overflow: hidden;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar > .container {
+  height: 100%;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_bar_in {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_item {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cs_site_header.cs_style_1
+  .cs_top_header.cs_branch_bar
+  .cs_branch_item
+  > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_left {
+  justify-content: flex-start;
+  padding-right: 24px;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_right {
+  justify-content: flex-end;
+  padding-left: 24px;
+  gap: 18px;
+}
+.cs_site_header.cs_style_1
+  .cs_top_header.cs_branch_bar
+  .cs_branch_right
+  > span {
+  flex: 1;
+  text-align: right;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_item i {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  flex: none;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_phone:hover {
+  color: var(--green-color);
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_divider {
+  position: relative;
+  width: 80px;
+  flex: none;
+  background-color: var(--green-color);
+  clip-path: polygon(40% 0, 100% 0, 60% 100%, 0% 100%);
+}
+
+@media (max-width: 991px) {
+  .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar {
+    height: auto;
+    font-size: 12px;
+  }
+  .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_bar_in {
+    flex-wrap: wrap;
+  }
+  .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_item {
+    flex: 1 1 100%;
+    justify-content: center !important;
+    padding: 8px 14px;
+  }
+  .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_divider {
+    display: none;
+  }
+}
+
+/* Sticky / scrolled state background */
+.cs_site_header.cs_style_1.cs_gescout_show,
+.cs_site_header.cs_style_1.cs_sticky_active {
+  background-color: #fff;
+  box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo container */
+.cs_site_header.cs_style_1 .cs_site_branding {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+.cs_site_header.cs_style_1 .cs_site_branding img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.cs_site_header.cs_style_1 .cs_site_branding:hover img {
+  transform: scale(1.04);
+}
+@media (max-width: 1199px) {
+  .cs_site_header.cs_style_1 .cs_site_branding img {
+    max-height: 64px;
+    max-width: 90px;
+  }
+}
+
+/* Header height to comfortably fit logo */
+.cs_site_header.cs_style_1 .cs_main_header_in {
+  height: 110px;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+@media (max-width: 1199px) {
+  .cs_site_header.cs_style_1 .cs_main_header_in {
+    height: 90px;
+  }
+}
+.cs_site_header.cs_style_1 .cs_main_header_left {
+  flex-shrink: 0;
+}
+.cs_site_header.cs_style_1 .cs_main_header_right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Top spacer – matches header height (top-bar 38px + main 110px) */
+.cs_site_header_spacing_150 {
+  height: 148px;
+}
+@media (max-width: 1199px) {
+  .cs_site_header_spacing_150 {
+    height: 130px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_site_header_spacing_150 {
+    height: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_site_header_spacing_150 {
+    height: 130px;
+  }
+}
+
+/* Navigation links */
+@media (min-width: 1200px) {
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li {
+    margin-right: 28px;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li:last-child {
+    margin-right: 0;
+  }
+  .cs_site_header.cs_style_1 .cs_site_branding + .cs_nav {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li {
+    margin-right: 18px;
+  }
+  .cs_site_header.cs_style_1 .cs_site_branding + .cs_nav {
+    margin-left: 24px;
+  }
+  .cs_site_header.cs_style_1 .cs_main_header_right {
+    gap: 5px 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a {
+    color: var(--heading-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    height: 2px;
+    width: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li:hover > a,
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li.current-menu-item > a {
+    color: var(--accent-color);
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li:hover > a::before {
+    width: 100%;
+  }
+
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list ul {
+    border-top-color: var(--accent-color);
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list ul li a {
+    color: var(--heading-color);
+    transition: all 0.3s ease;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list ul li a:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 1, 1, 0.06);
+    padding-left: 24px;
+  }
+}
+
+/* Search toggle */
+.cs_site_header.cs_style_1 .cs_search_toggle {
+  border-color: var(--border-color);
+  color: var(--heading-color);
+}
+.cs_site_header.cs_style_1 .cs_search_toggle:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+/* Header CTA button – green gradient with darker-green hover */
+.cs_site_header.cs_style_1 .cs_btn.cs_style_1.cs_color_1 {
+  background: linear-gradient(135deg, var(--green-color) 0%, #9ed95a 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px -6px rgba(133, 196, 65, 0.55);
+  transition: all 0.35s ease;
+}
+.cs_site_header.cs_style_1 .cs_btn.cs_style_1.cs_color_1:hover {
+  background: linear-gradient(
+    135deg,
+    var(--green-color-hover) 0%,
+    var(--green-color) 100%
+  );
+  box-shadow: 0 8px 22px -6px rgba(133, 196, 65, 0.65);
+  transform: translateY(-2px);
+}
+.cs_site_header.cs_style_1 .cs_btn.cs_style_1.cs_color_1 i {
+  transition: transform 0.3s ease;
+}
+.cs_site_header.cs_style_1 .cs_btn.cs_style_1.cs_color_1:hover i {
+  transform: translateX(4px);
+}
+
+/* Mobile menu accents */
+@media (max-width: 1199px) {
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list a:hover {
+    color: var(--accent-color);
+  }
+  .cs_site_header.cs_style_1 .cs_main_header_in {
+    flex-wrap: wrap;
+  }
+}
+
+/* Global button theme – PRIMARY = GREEN across whole site */
+.cs_btn.cs_style_1 {
+  transition: all 0.35s ease;
+}
+.cs_btn.cs_style_1.cs_color_1 {
+  background-color: var(--green-color) !important;
+  color: #fff !important;
+}
+.cs_btn.cs_style_1.cs_color_1:hover {
+  background-color: var(--green-color-hover) !important;
+  color: #fff !important;
+}
+.cs_btn.cs_style_1.cs_color_2 {
+  background-color: var(--blue-color);
+  color: #fff;
+}
+.cs_btn.cs_style_1.cs_color_2:hover {
+  background-color: var(--green-color);
+  color: #fff;
+}
+.cs_btn.cs_style_1.cs_color_3:hover {
+  background-color: var(--green-color);
+  color: #fff;
+}
+
+/* Banner / page hero – branded gradient overlay on top of image */
+.cs_page_heading,
+.cs_breadcrumb_section,
+section.cs_breadcrumb,
+.cs_banner_section {
+  position: relative;
+  color: #fff;
+  background-color: var(--black);
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  isolation: isolate;
+}
+.cs_page_heading::before,
+.cs_breadcrumb_section::before,
+section.cs_breadcrumb::before,
+.cs_banner_section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(2, 103, 255, 0.7) 55%,
+    rgba(255, 1, 1, 0.65) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+.cs_page_heading > *,
+.cs_breadcrumb_section > *,
+section.cs_breadcrumb > *,
+.cs_banner_section > * {
+  position: relative;
+  z-index: 1;
+}
+.cs_page_heading,
+.cs_page_heading h1,
+.cs_page_heading h2,
+.cs_page_heading p,
+.cs_page_heading span,
+.cs_page_heading li {
+  color: #fff;
+}
+.cs_page_heading a,
+.cs_breadcrumb_section a {
+  color: var(--green-color);
+  transition: color 0.3s ease;
+}
+.cs_page_heading a:hover,
+.cs_breadcrumb_section a:hover {
+  color: #fff;
+}
+.cs_banner_section .cs_btn.cs_style_1.cs_color_1 {
+  background-color: var(--green-color);
+}
+.cs_banner_section .cs_btn.cs_style_1.cs_color_1:hover {
+  background-color: var(--green-color-hover);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/*--------------------------------
+ Hero slider – zoom-in (Ken Burns) effect on background only
+ -------------------------------*/
+.cs_hero_slider_thumb .slick-slide .cs_hero.cs_style_1 {
+  position: relative;
+  overflow: hidden;
+}
+.cs_hero_slider_thumb .slick-slide .cs_hero.cs_style_1 .cs_hero_bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: scale(1);
+  transform-origin: center;
+  will-change: transform;
+}
+.cs_hero_slider_thumb
+  .slick-slide.slick-active
+  .cs_hero.cs_style_1
+  .cs_hero_bg {
+  animation: cs_hero_zoom 6s ease-out forwards;
+}
+.cs_hero_slider_thumb .slick-slide .cs_hero.cs_style_1::before {
+  z-index: 1;
+}
+.cs_hero_slider_thumb .slick-slide .cs_hero.cs_style_1 > .container {
+  position: relative;
+  z-index: 2;
+}
+@keyframes cs_hero_zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+/* Smooth fade text on active slide (no scale) */
+.cs_hero_slider_thumb .slick-slide .cs_hero_text_in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease 0.3s;
+}
+.cs_hero_slider_thumb .slick-slide.slick-active .cs_hero_text_in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*--------------------------------
+ Hero banner overlay – better text visibility
+ -------------------------------*/
+.cs_hero.cs_style_1,
+.cs_hero.cs_style_2,
+.cs_hero.cs_style_3 {
+  position: relative;
+  isolation: isolate;
+}
+.cs_hero.cs_style_1::before,
+.cs_hero.cs_style_2::before,
+.cs_hero.cs_style_3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      100deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 103, 255, 0.15) 0%,
+      rgba(133, 196, 65, 0.12) 100%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+.cs_hero.cs_style_1 > .container,
+.cs_hero.cs_style_2 > .container,
+.cs_hero.cs_style_3 > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cs_hero_slider_thumb_item .cs_hero.cs_style_1::before {
+  background: linear-gradient(
+      100deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+}
+
+/*--------------------------------
+ Theme-accent text → use GREEN (#85c441)
+ -------------------------------*/
+
+/* Hero highlighted span (the underlined coloured word in the title) */
+.cs_hero.cs_style_1 .cs_hero_title span,
+.cs_hero.cs_style_2 .cs_hero_title span,
+.cs_hero.cs_style_3 .cs_hero_title span {
+  color: var(--green-color);
+}
+.cs_hero.cs_style_1 .cs_hero_title span::before {
+  background-color: var(--green-color);
+}
+.cs_hero.cs_style_3 .cs_hero_title span {
+  -webkit-text-stroke: 3px var(--green-color);
+}
+
+/* Hero title & subtitle on dark image – force white for readability */
+.cs_hero.cs_style_1 .cs_hero_title,
+.cs_hero.cs_style_2 .cs_hero_title,
+.cs_hero.cs_style_3 .cs_hero_title {
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+.cs_hero.cs_style_1 .cs_hero_subtitle,
+.cs_hero.cs_style_2 .cs_hero_subtitle,
+.cs_hero.cs_style_3 .cs_hero_subtitle {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Hero contact info block (Receive / Call us) – green border + green text */
+.cs_hero.cs_style_1 .cs_hero_info {
+  border-left-color: var(--green-color);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 16px 10px 18px;
+  border-radius: 4px;
+}
+.cs_hero.cs_style_1 .cs_hero_info::before {
+  background-color: var(--green-color);
+}
+.cs_hero.cs_style_1 .cs_hero_info h3,
+.cs_hero.cs_style_1 .cs_hero_info p {
+  color: var(--green-color);
+}
+
+/* Generic accent text used across pages → swap to green */
+.cs_section_heading .cs_section_subtitle,
+.cs_section_subtitle,
+.cs_iconbox_subtitle_accent,
+.cs_accent_color,
+.cs_iconbox.cs_style_1 .cs_iconbox_title:hover,
+.cs_post.cs_style_1 .cs_post_meta a:hover,
+.cs_btn.cs_style_2,
+.cs_list.cs_style_2 li i {
+  color: var(--green-color);
+}
+
+/* Section subtitle eyebrow: keep visible on light bg */
+.cs_section_subtitle {
+  color: var(--green-color) !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* Hero CTA button #2 (secondary "Discover More") – use blue with green hover */
+.cs_btn.cs_style_1.cs_color_2 {
+  background-color: var(--blue-color);
+  color: #fff;
+}
+.cs_btn.cs_style_1.cs_color_2:hover {
+  background-color: var(--green-color);
+  color: #fff;
+}
+
+/* Card / iconbox title hover */
+.cs_iconbox.cs_style_1:hover .cs_iconbox_title,
+.cs_iconbox.cs_style_2:hover .cs_iconbox_title,
+.cs_post_title a:hover,
+.cs_service_card_title a:hover {
+  color: var(--green-color);
+}
+
+/* Footer link hover -> green */
+footer a:hover,
+.cs_footer a:hover {
+  color: var(--green-color) !important;
+}
+
+/*--------------------------------
+ Custom Footer V2 (Ghani Dental)
+ -------------------------------*/
+.cs_footer.cs_v2 {
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #0a1f44;
+  color: #d6dcec;
+  font-size: 15px;
+  line-height: 1.6em;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top payment banner */
+.cs_footer.cs_v2 .cs_footer_payment_wrap {
+  background-color: transparent;
+  padding-top: 50px;
+}
+.cs_footer.cs_v2 .cs_footer_payment {
+  background-color: var(--blue-color);
+  border-radius: 6px;
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.45);
+}
+.cs_footer.cs_v2 .cs_footer_payment_title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3em;
+}
+.cs_footer.cs_v2 .cs_footer_payment_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cs_footer.cs_v2 .cs_footer_payment_item {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+.cs_footer.cs_v2 .cs_footer_payment_item:hover {
+  transform: translateY(-3px);
+}
+.cs_footer.cs_v2 .cs_footer_payment_item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+/* Main grid */
+.cs_footer.cs_v2 .cs_footer_main {
+  padding: 60px 0 40px;
+}
+.cs_footer.cs_v2 .cs_footer_grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.4fr 0.8fr;
+  gap: 40px;
+}
+@media (max-width: 1199px) {
+  .cs_footer.cs_v2 .cs_footer_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+  }
+}
+@media (max-width: 575px) {
+  .cs_footer.cs_v2 .cs_footer_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs_footer.cs_v2 .cs_footer_widget_title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.cs_footer.cs_v2 .cs_footer_widget_title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 2px;
+  background-color: var(--green-color);
+  border-radius: 2px;
+}
+
+/* Quick links list */
+.cs_footer.cs_v2 .cs_footer_links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cs_footer.cs_v2 .cs_footer_links li {
+  margin-bottom: 12px;
+}
+.cs_footer.cs_v2 .cs_footer_links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d6dcec;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cs_footer.cs_v2 .cs_footer_links a i {
+  display: inline-flex;
+  color: var(--green-color);
+  font-size: 14px;
+}
+.cs_footer.cs_v2 .cs_footer_links a:hover {
+  color: var(--green-color) !important;
+  transform: translateX(4px);
+}
+
+/* Branch lists (with leading icons) */
+.cs_footer.cs_v2 .cs_footer_branch {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cs_footer.cs_v2 .cs_footer_branch li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #d6dcec;
+}
+.cs_footer.cs_v2 .cs_footer_branch li i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  color: var(--green-color);
+  font-size: 14px;
+  flex: none;
+  width: 16px;
+}
+.cs_footer.cs_v2 .cs_footer_branch li a {
+  color: #d6dcec;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+.cs_footer.cs_v2 .cs_footer_branch li a:hover {
+  color: var(--green-color) !important;
+}
+
+/* Social icons */
+.cs_footer.cs_v2 .cs_footer_socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cs_footer.cs_v2 .cs_footer_social {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: var(--blue-color);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.cs_footer.cs_v2 .cs_footer_social:hover {
+  background-color: var(--green-color);
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+
+/* Bottom copyright */
+.cs_footer.cs_v2 .cs_footer_bottom_v2 {
+  background-color: #061633;
+  padding: 16px 0;
+  text-align: center;
+}
+.cs_footer.cs_v2 .cs_footer_copy {
+  color: #ffffff;
+  font-size: 14px;
+}
+.cs_footer.cs_v2 .cs_footer_copy_link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.cs_footer.cs_v2 .cs_footer_copy_link:hover {
+  color: var(--green-color) !important;
+}
+
+/* Floating action buttons */
+.cs_float_btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 22px;
+  z-index: 999;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+.cs_float_btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.45);
+}
+.cs_float_whatsapp {
+  right: 24px;
+  bottom: 88px;
+  background-color: #25d366;
+}
+.cs_float_phone {
+  left: 24px;
+  bottom: 30px;
+  background-color: var(--blue-color);
+}
+@media (max-width: 575px) {
+  .cs_float_btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .cs_float_whatsapp {
+    right: 16px;
+    bottom: 76px;
+  }
+  .cs_float_phone {
+    left: 16px;
+    bottom: 20px;
+  }
+}

@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+## All Color Variable
+## Brand Theme: Ghani Dental
+##   Primary  : #ff0101 (red)
+##   Secondary: #0267ff (blue)
+##   Tertiary : #85c441 (green)
+##   Neutral  : #000    (black)
+----------------------------------------------------------------*/
+:root {
+  --white: #fff;
+  --black: #000000;
+  --heading-color: #0f0f0f;
+  --body-color: #4a4a4a;
+
+  --accent-color: #ff0101;
+  --accent-color-hover: #d80000;
+
+  --blue-color: #0267ff;
+  --blue-color-hover: #0150cc;
+
+  --green-color: #85c441;
+  --green-color-hover: #6ea832;
+
+  --brand-red: #ff0101;
+  --brand-blue: #0267ff;
+  --brand-green: #85c441;
+  --brand-black: #000000;
+
+  --gray-color: #f3f5f8;
+  --border-color: #e3e6ea;
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Rubik', sans-serif;
+}
