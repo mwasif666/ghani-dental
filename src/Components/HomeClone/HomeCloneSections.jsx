@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Slider from "react-slick";
 import {
   FaCheck,
   FaUser,
@@ -11,11 +12,13 @@ import {
   FaChevronDown,
   FaRegStarHalfStroke,
   FaArrowRight,
+  FaQuoteLeft,
 } from "react-icons/fa6";
+import { FaGoogle } from "react-icons/fa";
 import { ImageComparison } from "../ui/image-comparison-slider";
 
 /* -----------------------------------------------------------
- * 1. Why Choose Oradent Dental Clinic
+ * 1. Why Choose Ghani Dental Clinic
  * ----------------------------------------------------------- */
 const whyChooseFeatures = [
   {
@@ -43,22 +46,22 @@ const GdWhyChooseSection = () => (
         <div className="gd_why_choose_thumb">
           <img
             src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80"
-            alt="Dentist treating a patient at Oradent Dental Clinic"
+            alt="Dentist treating a patient at Ghani Dental Clinic"
           />
         </div>
         <div className="gd_why_choose_content">
           <h2 className="gd_why_choose_title">
-            Why Choose Oradent Dental Clinic in Islamabad?
+            Why Choose Ghani Dental Clinic in Islamabad?
           </h2>
           <p className="gd_why_choose_text">
-            At Oradent, we focus on giving you care that is safe, gentle, and
+            At Ghani, we focus on giving you care that is safe, gentle, and
             easy to understand. With modern tools and methods, our treatments
             are quick and comfortable. Our team looks after your long-term oral
             health, helping you keep strong teeth and healthy gums. Families
             trust us for honest advice, fair pricing, and friendly care &mdash;
             making every visit stress-free and welcoming.
           </p>
-          <h3 className="gd_why_choose_subtitle">What Makes Oradent Special</h3>
+          <h3 className="gd_why_choose_subtitle">What Makes Ghani Special</h3>
           <ul className="gd_why_choose_list">
             {whyChooseFeatures.map((feature, idx) => (
               <li key={idx} className="gd_why_choose_item">
@@ -149,7 +152,7 @@ const GdServicesSection = () => {
         <div className="gd_services_top">
            <h2 className="gd_services_title">OUR DENTAL SERVICES</h2>
             <p className="gd_services_subtitle">
-              At Oradent Dental Clinic, we provide complete dental care for the
+              At Ghani Dental Clinic, we provide complete dental care for the
               whole family. Whether you need a simple checkup, a filling, or a
               more advanced treatment, our team is here to guide you with care
               and comfort.
@@ -407,64 +410,192 @@ const GdTrustBookingSection = () => {
 };
 
 /* -----------------------------------------------------------
- * 5. Testimonials
+ * 5. Testimonials (Google Reviews carousel)
  * ----------------------------------------------------------- */
+const googleReviewsUrl =
+  "https://share.google/24qrfKtPnMDUdTyXu";
+
 const testimonialsData = [
   {
     quote:
       "I got my scaling and polishing done at Ghani Dental Care Center in Chungi #8, Rawalpindi. Dr. Baria Zareef was extremely professional and explained every step. The clinic is very clean and the staff is super friendly. Highly recommended!",
     name: "Sania Sandhu",
+    rating: 5,
+    timeAgo: "2 weeks ago",
+    initial: "S",
   },
   {
     quote:
       "Best dental experience I've ever had in Rawalpindi. I had a painful tooth that needed a root canal. Dr. Kaynaat Zamir handled it with so much care that I didn't feel any discomfort. The whole procedure was smooth and the price was very reasonable.",
     name: "Hamza Iqbal",
+    rating: 5,
+    timeAgo: "1 month ago",
+    initial: "H",
   },
   {
     quote:
       "I took my mother for a dental check-up and filling. The team at Ghani Dental Care was extremely polite and patient with her. The hygiene standards are excellent and the equipment looks modern. We will definitely come back for our family's regular check-ups.",
     name: "Ayesha Khan",
+    rating: 5,
+    timeAgo: "3 weeks ago",
+    initial: "A",
   },
   {
     quote:
       "Got my teeth whitening done here and the results are amazing. The staff at Muslim Town branch is very welcoming and they explained the entire process before starting. 24-hour availability is a huge plus for emergency cases.",
     name: "Usman Tariq",
+    rating: 5,
+    timeAgo: "1 month ago",
+    initial: "U",
   },
   {
     quote:
       "I had braces fitted by Dr. Syed WaliUllah Shah. He is very knowledgeable and answered all my questions about orthodontic treatment. The follow-ups have been hassle-free and the staff always books appointments on time. Truly the best dental clinic in the area.",
     name: "Maryam Bilal",
+    rating: 5,
+    timeAgo: "2 months ago",
+    initial: "M",
   },
   {
     quote:
       "My experience at Ghani Dental Care Center was wonderful. I got crowns done and they look completely natural. The doctor was patient and made sure I was comfortable throughout. The clinic is well-maintained and the prices are very fair compared to other clinics.",
     name: "Ali Raza Sheikh",
+    rating: 5,
+    timeAgo: "3 months ago",
+    initial: "A",
+  },
+  {
+    quote:
+      "Excellent dental clinic with very professional staff. Got my dental implants done and the procedure was completely painless. The clinic uses modern equipment and follows proper hygiene protocols. Definitely worth visiting!",
+    name: "Fatima Malik",
+    rating: 5,
+    timeAgo: "1 month ago",
+    initial: "F",
+  },
+  {
+    quote:
+      "Very satisfied with the treatment. The dentist explained every step and made me feel comfortable. The pricing is reasonable and the clinic is conveniently located in Chungi #8 Rawalpindi. Highly recommend Ghani Dental Care.",
+    name: "Ahmed Raza",
+    rating: 5,
+    timeAgo: "2 weeks ago",
+    initial: "A",
   },
 ];
 
-const GdTestimonialsSection = () => (
-  <section className="gd_testimonials_section">
-    <div className="gd_testimonials_overlay" aria-hidden="true" />
-    <div className="container">
-      <h2 className="gd_testimonials_title">
-        What Our Patients Are Saying
-        <br />
-        About Us
-      </h2>
-      <div className="gd_testimonials_grid">
-        {testimonialsData.map((t, idx) => (
-          <article key={idx} className="gd_testimonial_card">
-            <div className="gd_testimonial_avatar">
-              <FaUser aria-hidden="true" />
+const renderStars = (rating) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push(<FaStar key={i} />);
+    } else if (i - 0.5 <= rating) {
+      stars.push(<FaRegStarHalfStroke key={i} />);
+    } else {
+      stars.push(<FaRegStar key={i} />);
+    }
+  }
+  return stars;
+};
+
+const calcAverageRating = () => {
+  const total = testimonialsData.reduce((sum, t) => sum + t.rating, 0);
+  return (total / testimonialsData.length).toFixed(1);
+};
+
+const GdTestimonialsSection = () => {
+  const totalReviews = testimonialsData.length;
+  const averageRating = calcAverageRating();
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 767,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+
+  return (
+    <section className="gd_testimonials_section">
+      <div className="gd_testimonials_overlay" aria-hidden="true" />
+      <div className="container">
+        <div className="gd_testimonials_header">
+          <h2 className="gd_testimonials_title">
+            What Our Patients Are Saying
+            <br />
+            About Us
+          </h2>
+          <div className="gd_testimonials_rating_box">
+            <div className="gd_testimonials_google_brand">
+              <FaGoogle aria-hidden="true" />
+              <span>Google Reviews</span>
             </div>
-            <p className="gd_testimonial_quote">&ldquo;{t.quote}&rdquo;</p>
-            <p className="gd_testimonial_name">{t.name}</p>
-          </article>
-        ))}
+            <div className="gd_testimonials_rating_score">
+              <span className="gd_testimonials_score">{averageRating}</span>
+              <div className="gd_testimonials_stars_lg">
+                {renderStars(Math.round(averageRating))}
+              </div>
+            </div>
+            <p className="gd_testimonials_count">
+              Based on <strong>{totalReviews}+</strong> verified reviews
+            </p>
+            <a
+              href={googleReviewsUrl}
+              className="gd_testimonials_google_btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on Google
+            </a>
+          </div>
+        </div>
+
+        <div className="gd_testimonials_carousel">
+          <Slider {...sliderSettings}>
+            {testimonialsData.map((t, idx) => (
+              <div key={idx} className="gd_testimonial_slide">
+                <article className="gd_testimonial_card">
+                  <div className="gd_testimonial_top">
+                    <div className="gd_testimonial_avatar_circle">
+                      {t.initial}
+                    </div>
+                    <div className="gd_testimonial_meta">
+                      <p className="gd_testimonial_name">{t.name}</p>
+                      <p className="gd_testimonial_time">
+                        <FaGoogle aria-hidden="true" />
+                        <span>{t.timeAgo}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="gd_testimonial_stars">
+                    {renderStars(t.rating)}
+                  </div>
+                  <FaQuoteLeft
+                    className="gd_testimonial_quote_icon"
+                    aria-hidden="true"
+                  />
+                  <p className="gd_testimonial_quote">{t.quote}</p>
+                </article>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 /* -----------------------------------------------------------
  * 6. Visit Our Clinic + Map
@@ -475,8 +606,8 @@ const GdVisitClinicSection = () => (
       <div className="gd_visit_grid">
         <div className="gd_visit_map">
           <iframe
-            title="OraDent Dental Clinic Islamabad F-8 location"
-            src="https://www.google.com/maps?hl=en&q=Office%20No%2014%2C%20Hashim%20Plaza%2C%20F-8%20Markaz%2C%20Islamabad&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+            title="Ghani Dental Care Center Rawalpindi location"
+            src="https://www.google.com/maps?hl=en&q=Shop%20%236%2C%20Muslim%20Town%2C%20Band%20Khanna%20Rd%2C%20Chungi%20%238%2C%20Rawalpindi&t=&z=16&ie=UTF8&iwloc=B&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
@@ -484,46 +615,41 @@ const GdVisitClinicSection = () => (
         </div>
         <div className="gd_visit_content">
           <h2 className="gd_visit_title">
-            Visit Our Dental Clinic in F-8 Islamabad
+            Visit Our Dental Clinic in Rawalpindi
           </h2>
           <p className="gd_visit_text">
-            We are proud to serve patients from F-8, F-7, F-6, G-8, G-9 and
-            nearby areas in Islamabad. Our clinic provides modern dental care in
-            a friendly and comfortable environment.
+            We are proud to serve patients from Chungi #8, Muslim Town, Khanna,
+            Bahria Town and nearby areas in Rawalpindi &amp; Islamabad. Our
+            clinic provides modern dental care in a friendly and comfortable
+            environment.
           </p>
-          <h3 className="gd_visit_subtitle">Islamabad (F-8)</h3>
+          <h3 className="gd_visit_subtitle">Rawalpindi (Chungi #8)</h3>
           <ul className="gd_visit_info">
             <li>
               <span className="gd_visit_info_icon">
                 <FaLocationDot aria-hidden="true" />
               </span>
               <span>
-                Office No. 14, Ground Floor, Hashim Palaza, Near MidCity
-                Hospital, F-8 Markaz, Islamabad
+                Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi
               </span>
             </li>
             <li>
               <span className="gd_visit_info_icon">
                 <FaEnvelope aria-hidden="true" />
               </span>
-              <a href="mailto:oradentdentalclinicf8@gmail.com">
-                oradentdentalclinicf8@gmail.com
-              </a>
+              <a href="mailto:info@ghanidental.com">info@ghanidental.com</a>
             </li>
             <li>
               <span className="gd_visit_info_icon">
                 <FaPhone aria-hidden="true" />
               </span>
-              <a href="tel:+923065393039">+923065393039</a>
+              <a href="tel:03334425828">0333 4425828</a>
             </li>
             <li>
               <span className="gd_visit_info_icon">
                 <FaRegClock aria-hidden="true" />
               </span>
-              <span>
-                Mon-Thu &amp; Sat: 11:30 AM &ndash; 11:30 PM | Fri &amp; Sun:
-                04:00 PM &ndash; 11:30 PM
-              </span>
+              <span>24/7 Dental Clinic in Rawalpindi</span>
             </li>
           </ul>
         </div>
@@ -539,27 +665,27 @@ const faqData = [
   {
     question: "How to pick the right dental clinic in Islamabad?",
     answer:
-      "Look for a clinic with qualified dentists, modern equipment, transparent pricing, and good patient reviews. At Oradent Dental Clinic, we offer experienced specialists, state-of-the-art technology, and a comfortable environment to make sure every visit feels stress-free.",
+      "Look for a clinic with qualified dentists, modern equipment, transparent pricing, and good patient reviews. At Ghani Dental Clinic, we offer experienced specialists, state-of-the-art technology, and a comfortable environment to make sure every visit feels stress-free.",
   },
   {
     question: "How much does it cost to clean teeth in Islamabad?",
     answer:
-      "Teeth cleaning (scaling and polishing) at Oradent Dental Clinic typically ranges from PKR 3,000 to PKR 6,000 depending on the buildup level and your individual requirements. We always provide a clear quote before starting any treatment.",
+      "Teeth cleaning (scaling and polishing) at Ghani Dental Clinic typically ranges from PKR 3,000 to PKR 6,000 depending on the buildup level and your individual requirements. We always provide a clear quote before starting any treatment.",
   },
   {
     question: "Who is the best dentist in Islamabad?",
     answer:
-      "The best dentist for you depends on your specific needs. Our team at Oradent Dental Clinic includes qualified specialists in general dentistry, cosmetic dentistry, orthodontics, endodontics, and oral surgery so you can be matched with the right expert.",
+      "The best dentist for you depends on your specific needs. Our team at Ghani Dental Clinic includes qualified specialists in general dentistry, cosmetic dentistry, orthodontics, endodontics, and oral surgery so you can be matched with the right expert.",
   },
   {
     question: "Who is the best female dentist in Islamabad?",
     answer:
-      "Dr. Kaynaat Zamir, Dr. Baria Zareef, and Dr. Maryam Hafeez are highly qualified female dentists at Oradent Dental Clinic with FCPS, MDS, and certified specialty training, providing patient-focused dental care in Islamabad.",
+      "Dr. Kaynaat Zamir, Dr. Baria Zareef, and Dr. Maryam Hafeez are highly qualified female dentists at Ghani Dental Clinic with FCPS, MDS, and certified specialty training, providing patient-focused dental care in Islamabad.",
   },
   {
     question: "Where can I get dental implants in Islamabad?",
     answer:
-      "You can get safe and reliable dental implants at Oradent Dental Clinic, F-8 Markaz Islamabad. Our implant specialists use modern titanium implant systems for permanent, natural-looking, and long-lasting results.",
+      "You can get safe and reliable dental implants at Ghani Dental Clinic, F-8 Markaz Islamabad. Our implant specialists use modern titanium implant systems for permanent, natural-looking, and long-lasting results.",
   },
 ];
 
@@ -662,7 +788,7 @@ const GdBlogsSection = () => {
           <div className="gd_blogs_head_text">
             <h2 className="gd_blogs_title">Our Blogs</h2>
             <p className="gd_blogs_subtitle">
-              Find out more on how the best dental clinic in Islamabad, Oradent
+              Find out more on how the best dental clinic in Islamabad, Ghani
               Dental Clinic, provides insights on dental procedures and care.
               Check our blogs for more valuable guidance.
             </p>
@@ -696,7 +822,7 @@ const GdBlogsSection = () => {
                   <a href="/blog/blog-details">{post.title}</a>
                 </h3>
                 <p className="gd_blog_meta">
-                  Oradent Dental Clinic &bull; {post.date}
+                  Ghani Dental Clinic &bull; {post.date}
                 </p>
                 <p className="gd_blog_excerpt">{post.excerpt}</p>
               </div>

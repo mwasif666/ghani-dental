@@ -982,36 +982,31 @@ const MainHome = () => {
       <HeroSection data={heroData} />
       {/* End Hero Section */}
       <main className="gd_clone_home">
-        {/* Start Working Hours Strip (below banner) */}
+        {/* Start Call Consultation Strip (below banner) */}
         <section className="gd_intro_top_strip">
           <div className="gd_intro_call_card">
             <div className="gd_intro_call_text">
               <FaPhone aria-hidden="true" />
-              <div className="gd_intro_call_text_inner">
-                <span>Call Our Dentist For A Consultation</span>
-                <a className="gd_intro_call_phone" href="tel:03334425828">
-                  03334425828
-                </a>
-              </div>
-            </div>
-            <div className="gd_intro_hours">
-              <h3>WORKING HOURS</h3>
-              <p>Mon - Sat: 11:30 AM - 11:30 PM</p>
-              <p>Sunday: &nbsp;&nbsp; 02:00 PM - 11:30 PM</p>
+              <span className="gd_intro_call_title">
+                Call Our Dentist For A Consultation
+              </span>
+              <a className="gd_intro_call_phone" href="tel:03334425828">
+                03334425828
+              </a>
             </div>
           </div>
         </section>
-        {/* End Working Hours Strip */}
+        {/* End Call Consultation Strip */}
         <section className="gd_intro_clone_section">
           <div className="container">
             <div className="gd_intro_content">
               <div className="gd_intro_text">
                 <h1>
-                  Welcome to Oradent Dental Clinic &ndash; Your Family Dentist
+                  Welcome to Ghani Dental Clinic &ndash; Your Family Dentist
                   in Islamabad
                 </h1>
                 <p>
-                  <span>Oradent Dental Clinic</span> is a trusted destination
+                  <span>Ghani Dental Clinic</span> is a trusted destination
                   for modern and patient-focused dental care in Islamabad. Since
                   2018, our experienced dentists have helped families maintain
                   healthy teeth and confident smiles through safe and gentle
@@ -1026,17 +1021,25 @@ const MainHome = () => {
                   From routine checkups and teeth cleaning to advanced
                   procedures like dental implants and root canal therapy, our
                   team provides personalized care using modern dental
-                  technology. At Oradent Dental Clinic, you&rsquo;re not just a
+                  technology. At Ghani Dental Clinic, you&rsquo;re not just a
                   patient&mdash;you&rsquo;re part of our dental family, and
                   every visit is designed to be comfortable and stress-free.
                 </p>
               </div>
 
-              <div className="gd_intro_image">
-                <img
-                  src="/assets/img/oradent-intro-clinic.jpg"
-                  alt="Modern dental clinic waiting area"
-                />
+              <div className="gd_intro_image gd_intro_image_pair">
+                <div className="gd_intro_image_back">
+                  <img
+                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80"
+                    alt="Smiling female patient in dental chair"
+                  />
+                </div>
+                <div className="gd_intro_image_front">
+                  <img
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80"
+                    alt="Dentist examining patient's teeth"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -59,14 +59,12 @@ const Header = ({ isTopBar, variant }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      if (currentScrollPos > prevScrollPos) {
-        setIsSticky('cs_gescout_sticky'); // Scrolling down
-      } else if (currentScrollPos !== 0) {
-        setIsSticky('cs_gescout_sticky cs_gescout_show'); // Scrolling up
+      if (currentScrollPos > 50) {
+        setIsSticky('cs_gescout_sticky cs_gescout_show cs_fixed_sticky');
       } else {
         setIsSticky();
       }
-      setPrevScrollPos(currentScrollPos); // Update previous scroll position
+      setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener('scroll', handleScroll);
