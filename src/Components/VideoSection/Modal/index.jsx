@@ -12,6 +12,8 @@ export default function VideoModal({ isTrue, iframeSrc, handelClose }) {
                   className="embed-responsive-item"
                   src={iframeSrc}
                   title="Video"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>

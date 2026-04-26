@@ -61,6 +61,19 @@
     bottom: 60px;
     z-index: 3;
   }
+
+  .cs_dental_solution_subtitle {
+    color: var(--white) !important;
+
+    .cs_shape_left {
+      color: var(--white) !important;
+      background-color: var(--white) !important;
+
+      &::before {
+        background-color: var(--white) !important;
+      }
+    }
+  }
 }
 
 .cs_slider_arrows.cs_style_1 {

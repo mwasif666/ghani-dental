@@ -17,7 +17,7 @@ const data = {
     {
       name: 'Easypaisa',
       img: 'https://www.svgrepo.com/show/484411/letter-e.svg',
-      bg: '#85c441',
+      bg: '#099e4f',
     },
     {
       name: 'JazzCash',

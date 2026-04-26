@@ -98,7 +98,7 @@ const ContactSection = ({ data, reverseOrder }) => {
                       type="submit"
                       className="cs_btn cs_style_1 cs_color_1"
                     >
-                      Send Request
+                      {data.submitText || 'Send Request'}
                     </button>
                   </div>
                 </form>
@@ -167,7 +167,7 @@ const ContactSection = ({ data, reverseOrder }) => {
                       type="submit"
                       className="cs_btn cs_style_1 cs_color_1"
                     >
-                      Send Request
+                      {data.submitText || 'Send Request'}
                     </button>
                   </div>
                 </form>

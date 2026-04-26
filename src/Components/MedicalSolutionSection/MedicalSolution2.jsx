@@ -1,25 +1,39 @@
 import SectionHeading from "../SectionHeading";
-import { Link } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight, FaArrowRight } from "react-icons/fa6";
+import { useState } from "react";
 
 const MedicalSolution2 = ({ data }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <>
       <div className="container">
-        <div className="row cs_gap_y_40">
-          <div className="col-lg-6">
-            <div className="cs_solution_content_wrapper">
-              <SectionHeading
-                SectionTitle={data.title}
-                SectionSubtitle={data.subtitle}
-                SectionDescription={data.description}
-                variant={"s_style_1"}
-              />
+        <SectionHeading
+          SectionTitle={data.title}
+          SectionSubtitle={data.subtitle}
+          SectionDescription={data.description}
+          variant={"s_style_1"}
+          className={"text-center cs_mb_60"}
+        />
 
-              <ul className="cs_solution_links cs_style_1 cs_mp0">
+        <div className="row cs_gap_y_40 cs_choose_us_section_row">
+          <div className="col-md-6">
+            <div className="cs_solution_content_wrapper cs_choose_us_content">
+              <ul className="cs_solution_links cs_style_1 cs_solution_accordion cs_mp0">
                 {data.links.map((link, index) => (
-                  <li key={index}>
-                    <Link to={link.href}>
+                  <li
+                    key={index}
+                    className={activeIndex === index ? "cs_active" : ""}
+                  >
+                    <button
+                      type="button"
+                      className="cs_solution_accordion_head"
+                      aria-expanded={activeIndex === index}
+                      aria-controls={`choose-us-panel-${index}`}
+                      onClick={() =>
+                        setActiveIndex(activeIndex === index ? -1 : index)
+                      }
+                    >
                       <span className="cs_tab_link_icon_left cs_center">
                         <img src={link.iconSrc} alt={link.iconAlt} />
                       </span>
@@ -29,15 +43,32 @@ const MedicalSolution2 = ({ data }) => {
                           <FaAngleRight />
                         </i>
                       </span>
-                    </Link>
+                    </button>
+                    <div
+                      id={`choose-us-panel-${index}`}
+                      className="cs_solution_accordion_body"
+                    >
+                      <div className="cs_solution_accordion_body_in">
+                        <p>{link.description}</p>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="cs_solution_thumbnail">
-              <img src={data.thumbnailSrc} alt="Tab Image" />
+          <div className="col-md-6">
+            <div className="cs_solution_thumbnail cs_choose_us_visual">
+              <div className="cs_choose_us_success_card">
+                <div className="cs_choose_us_stat">
+                  <h3>{data.successRate?.value}</h3>
+                  <p>{data.successRate?.label}</p>
+                </div>
+                <span className="cs_choose_us_stat_btn cs_center">
+                  <FaArrowRight />
+                </span>
+                <img src={data.thumbnailSrc} alt={data.thumbnailAlt} />
+              </div>
             </div>
           </div>
         </div>

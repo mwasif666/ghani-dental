@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaAnglesRight, FaLocationDot, FaPhone } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Header = ({ isTopBar, variant }) => {
@@ -9,10 +10,15 @@ const Header = ({ isTopBar, variant }) => {
   const [isSticky, setIsSticky] = useState();
   const menu = {
     email: 'info@ghanidental.com',
-    branchF8: 'Office # 14, Ground Floor, Hashim Palaza, F-8 Markaz, Islamabad',
-    branchI8: 'Shop # 07, PakLand Business Center, I-8 Markaz, Islamabad',
-    phone: '+92 324 9134745',
-    phoneLink: '+923249134745',
+    branchF8: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi',
+    branchI8: '',
+    phone: '03334425828',
+    phoneLink: '03334425828',
+    socialLinks: {
+      facebook: 'https://facebook.com',
+      instagram: 'https://instagram.com',
+      linkedin: 'https://linkedin.com',
+    },
     logoUrl: '/assets/img/logo.png',
     logoLink: '/',
     navItems: [
@@ -102,7 +108,6 @@ const Header = ({ isTopBar, variant }) => {
                 </div>
                 <div className="cs_branch_divider" aria-hidden="true" />
                 <div className="cs_branch_item cs_branch_right">
-                  <span>{menu.branchI8}</span>
                   <Link
                     to={`tel:${menu.phoneLink}`}
                     className="cs_branch_phone"
@@ -112,6 +117,32 @@ const Header = ({ isTopBar, variant }) => {
                     </i>
                     <span>{menu.phone}</span>
                   </Link>
+                  <div className="cs_branch_social">
+                    <a
+                      href={menu.socialLinks.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                    >
+                      <FaFacebookF />
+                    </a>
+                    <a
+                      href={menu.socialLinks.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <FaInstagram />
+                    </a>
+                    <a
+                      href={menu.socialLinks.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

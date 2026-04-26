@@ -631,24 +631,42 @@
 .cs_iconbox.cs_style_7 {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 
   .cs_iconbox_thumbnail {
-    border-radius: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
     z-index: 2;
+    overflow: hidden;
+    height: 250px;
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: inherit;
+      display: block;
+    }
+
+    @media (max-width: 1199px) {
+      height: 230px;
+    }
+
+    @media (max-width: 767px) {
+      height: 210px;
     }
   }
 
   .cs_iconbox_content {
-    width: 95%;
+    width: 100%;
+    flex: 1;
     background-color: var(--white);
     border-radius: 0 0 10px 10px;
     position: relative;
-    margin: -50px auto 0;
+    margin: -50px 0 0;
     padding: 70px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -671,7 +689,7 @@
   .cs_iconbox_icon {
     width: 53px;
     height: 53px;
-    background-color: var(--white);
+    background-color: transparent;
     border-radius: 50%;
     margin: -50px 0 32px;
     position: relative;
@@ -679,7 +697,7 @@
 
     img {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     &::before {
@@ -687,7 +705,7 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      top: 3px;
+      top: 0;
       left: 0;
       background-color: var(--blue-color);
       filter: drop-shadow(0px 0px 49px rgba(49, 82, 157, 0.14));
@@ -697,16 +715,7 @@
     }
 
     &::after {
-      content: "";
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%) rotate(45deg);
-      background-color: var(--accent-color);
-      z-index: 0;
-      transition: all 0.4s ease;
+      display: none;
     }
   }
 

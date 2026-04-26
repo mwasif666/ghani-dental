@@ -52,52 +52,64 @@ const TeamSection = ({ data, bgColor, variant, hr }) => {
           <div className="cs_slider_container">
             <div className="cs_slider_wrapper">
               <Slider {...settings}>
-                {data?.sliderData.map((item, index) => (
-                  <div className="cs_slide" key={index}>
-                    <div
-                      className={`cs_team cs_style_1 ${
-                        bgColor ? "cs_accent_bg" : "cs_blue_bg"
-                      } `}
-                    >
+                {data?.sliderData.map((item, index) => {
+                  const professionLength = item.profession.length;
+                  const professionSize =
+                    professionLength > 95
+                      ? "cs_extra_long"
+                      : professionLength > 58
+                      ? "cs_long"
+                      : "cs_short";
+
+                  return (
+                    <div className="cs_slide" key={index}>
                       <div
-                        className={`cs_team_shape ${
-                          bgColor ? "cs_blue_bg" : "cs_accent_bg "
-                        }`}
-                      />
-                      <Link to={item.link} className="cs_team_thumbnail">
-                        <img src={item.imageUrl} alt="Team Thumbnail" />
-                      </Link>
-                      <div className="cs_team_bio">
-                        <h3 className="cs_team_title cs_extra_bold mb-0">
-                          <Link to={item.link}>{item.name}</Link>
-                        </h3>
-                        <p className="cs_team_subtitle">{item.profession}</p>
-                        <div className="cs_social_btns cs_style_1">
-                          <Link to={item.facebook} className="cs_center">
-                            <i>
-                              <FaFacebookF />
-                            </i>
-                          </Link>
-                          <Link to={item.pinterest} className="cs_center">
-                            <i>
-                              <FaPinterestP />
-                            </i>
-                          </Link>
-                          <Link to={item.twitter} className="cs_center">
-                            <i>
-                              <FaTwitter />
-                            </i>
-                          </Link>
-                          <Link to={item.instagram} className="cs_center">
-                            <i>
-                              <FaInstagram />
-                            </i>
-                          </Link>
+                        className={`cs_team cs_style_1 ${
+                          bgColor ? "cs_accent_bg" : "cs_blue_bg"
+                        } cs_team_theme_${item.theme || "red"}`}
+                      >
+                        <div
+                          className={`cs_team_shape ${
+                            bgColor ? "cs_blue_bg" : "cs_accent_bg "
+                          }`}
+                        />
+                        <Link to={item.link} className="cs_team_thumbnail">
+                          <img src={item.imageUrl} alt={item.name} />
+                        </Link>
+                        <div className="cs_team_bio">
+                          <h3 className="cs_team_title cs_extra_bold mb-0">
+                            <Link to={item.link}>{item.name}</Link>
+                          </h3>
+                          <p className={`cs_team_subtitle ${professionSize}`}>
+                            {item.profession}
+                          </p>
+                          <div className="cs_social_btns cs_style_1">
+                            <Link to={item.facebook} className="cs_center">
+                              <i>
+                                <FaFacebookF />
+                              </i>
+                            </Link>
+                            <Link to={item.pinterest} className="cs_center">
+                              <i>
+                                <FaPinterestP />
+                              </i>
+                            </Link>
+                            <Link to={item.twitter} className="cs_center">
+                              <i>
+                                <FaTwitter />
+                              </i>
+                            </Link>
+                            <Link to={item.instagram} className="cs_center">
+                              <i>
+                                <FaInstagram />
+                              </i>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </Slider>
             </div>
           </div>

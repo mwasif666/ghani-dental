@@ -49,7 +49,7 @@
 
 /*--------------------------------
  Brand Theme – Ghani Dental
- Colors: #ff0101, #85c441, #0267ff, #000
+ Colors: #ff0101, #099e4f, #0267ff, #000
  -------------------------------*/
 
 /* Helper utility classes */
@@ -133,6 +133,28 @@
 .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_phone:hover {
   color: var(--green-color);
 }
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_social a {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  transition: all 0.25s ease;
+}
+.cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_social a:hover {
+  background-color: #fff;
+  color: var(--green-color);
+  border-color: #fff;
+}
 .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_divider {
   position: relative;
   width: 80px;
@@ -154,6 +176,9 @@
     justify-content: center !important;
     padding: 8px 14px;
   }
+  .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_right {
+    gap: 12px;
+  }
   .cs_site_header.cs_style_1 .cs_top_header.cs_branch_bar .cs_branch_divider {
     display: none;
   }
@@ -174,9 +199,9 @@
   padding: 0;
 }
 .cs_site_header.cs_style_1 .cs_site_branding img {
-  max-height: 80px;
+  max-height: 120px;
   width: auto;
-  max-width: 100px;
+  max-width: 160px;
   object-fit: contain;
   display: block;
   transition: transform 0.3s ease;
@@ -521,20 +546,20 @@ section.cs_breadcrumb > *,
 }
 
 /*--------------------------------
- Theme-accent text → use GREEN (#85c441)
+ Theme-accent text → use GREEN (#099e4f)
  -------------------------------*/
 
 /* Hero highlighted span (the underlined coloured word in the title) */
 .cs_hero.cs_style_1 .cs_hero_title span,
 .cs_hero.cs_style_2 .cs_hero_title span,
 .cs_hero.cs_style_3 .cs_hero_title span {
-  color: var(--green-color);
+  color: #85c441;
 }
 .cs_hero.cs_style_1 .cs_hero_title span::before {
-  background-color: var(--green-color);
+  background-color: #85c441;
 }
 .cs_hero.cs_style_3 .cs_hero_title span {
-  -webkit-text-stroke: 3px var(--green-color);
+  -webkit-text-stroke: 3px #85c441;
 }
 
 /* Hero title & subtitle on dark image – force white for readability */
@@ -552,17 +577,17 @@ section.cs_breadcrumb > *,
 
 /* Hero contact info block (Receive / Call us) – green border + green text */
 .cs_hero.cs_style_1 .cs_hero_info {
-  border-left-color: var(--green-color);
+  border-left-color: #85c441;
   background: rgba(0, 0, 0, 0.25);
   padding: 10px 16px 10px 18px;
   border-radius: 4px;
 }
 .cs_hero.cs_style_1 .cs_hero_info::before {
-  background-color: var(--green-color);
+  background-color: #85c441;
 }
 .cs_hero.cs_style_1 .cs_hero_info h3,
 .cs_hero.cs_style_1 .cs_hero_info p {
-  color: var(--green-color);
+  color: #85c441;
 }
 
 /* Generic accent text used across pages → swap to green */

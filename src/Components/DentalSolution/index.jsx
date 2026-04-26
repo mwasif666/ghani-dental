@@ -25,8 +25,8 @@ const DentalSolution = ({ data }) => {
         <div
           className={`cs_dental_slider_wrapper ${data.wrapperClass} position-relative`}
         >
-          <div className="cs_section_heading cs_style_1">
-            <p className="cs_section_subtitle cs_accent_color">
+          <div className="cs_section_heading text-white cs_style_1">
+            <p className="cs_section_subtitle cs_dental_solution_subtitle">
               <span className="cs_shape_left" />
               {data.subtitle}
             </p>

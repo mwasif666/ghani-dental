@@ -3,20 +3,20 @@ import { FaAnglesRight, FaRegCircleCheck } from "react-icons/fa6";
 import Button from "../Buttons";
 import SectionHeading from "../SectionHeading";
 import VideoModal from "../VideoSection/Modal";
-import { Link } from "react-router-dom";
 
 const About = ({ data }) => {
   const [toggle, setToggle] = useState(false);
 
   const [iframeSrc, setIframeSrc] = useState("about:blank");
 
-  const handelClick = () => {
+  const handelClick = (e) => {
+    if (e?.preventDefault) e.preventDefault();
     setIframeSrc(`${data.videoUrl}`);
-    setToggle(!toggle);
+    setToggle(true);
   };
   const handelClose = () => {
     setIframeSrc("about:blank");
-    setToggle(!toggle);
+    setToggle(false);
   };
   return (
     <>
@@ -26,7 +26,8 @@ const About = ({ data }) => {
             <div className="cs_about_thumb">
               <div className="cs_about_thumb_1">
                 <img src={data.headImgUrl} alt="" />
-                <Link
+                <button
+                  type="button"
                   className="cs_about_player_btn cs_video_open"
                   onClick={handelClick}
                 >
@@ -36,10 +37,28 @@ const About = ({ data }) => {
                   <span className="cs_about_play_btn_text">
                     {data.videoText}
                   </span>
-                </Link>
+                </button>
               </div>
-              <div className="cs_about_thumb_2">
-                <img src="assets/img/about_img_2.jpg" alt="About Image" />
+              <div className="cs_about_thumb_2" onClick={handelClick}>
+                {data.thumbVideoUrl ? (
+                  <div className="cs_about_thumb_video_preview">
+                    <iframe
+                      src={data.thumbVideoUrl}
+                      title="How we work preview"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      style={{
+                        width: "400px",
+                        height: "260px",
+                        border: "0px",
+                        pointerEvents: "none",
+                        transform: "scale(1.24)",
+                        transformOrigin: "center center 0px",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <img src="assets/img/about_img_2.jpg" alt="About Image" />
+                )}
                 <img
                   src="assets/img/icons/about_shape_1.png"
                   alt="Shape Image"
