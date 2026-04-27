@@ -29,9 +29,9 @@ const heroData = {
     {
       bgImageUrl:
         "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80",
-      title: "A Healthier Smile, A <span>Confident You.</span>",
+      title: "Trusted Dentist in Rawalpindi for a Brighter, Healthier Smile",
       contactSubtitle:
-        "Ghani Dental Care, Islamabad – Pakistan ke trusted dental specialists. Modern technology, gentle hands, and treatments tailored just for you.",
+        "Searching for a reliable dentist near you in Rawalpindi? We provide comprehensive dental services, from preventive care to cosmetic dentistry. Book your appointment today for expert care and a brighter smile.",
       contactTitle: "Book Your Appointment Today",
       contact: "Call Us: +92 300 1234567",
       btnText1: "Book Appointment",
@@ -54,25 +54,10 @@ const heroData = {
       link2: "/about",
       iconImgUrl: "assets/img/icons/hero_icon.png",
     },
-    {
-      bgImageUrl:
-        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80",
-      title: "Painless Treatments. <span>Lasting Smiles.</span>",
-      contactSubtitle:
-        "From routine check-ups to advanced cosmetic procedures – Ghani Dental ke certified doctors ensure karte hain ke aap har visit pe relax aur confident feel karein.",
-      contactTitle: "Trusted by 5000+ Patients",
-      contact: "Call Us: +92 300 1234567",
-      btnText1: "Book Appointment",
-      link: "/appointments",
-      btnText2: "Meet The Team",
-      link2: "/doctors",
-      iconImgUrl: "assets/img/icons/hero_icon.png",
-    },
   ],
   secondarySlider: [
     "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80",
     "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80",
   ],
 };
 
@@ -108,11 +93,12 @@ const ctaData3 = {
 
 const aboutData = {
   sectionSubtitle: "About Us",
-  sectionTitle: "Advanced Dentistry Meets <span>Compassionate Care</span>",
+  sectionTitle:
+    "Welcome to Ghani Dental Clinic – Your Family Dentist in Islamabad",
   aboutText:
     "At Ghani Dental Care Centre we combine advanced dental technology with genuine compassion and personalized care. Our experienced team delivers gentle, high-quality treatments in a comfortable environment, helping every patient achieve lasting oral health and a confident smile.",
   service:
-    "Award Winning care: Recognized for clinical excellence and outstanding patient results.",
+    "We offer complete dental care for every age and every need, from routine checkups and cleanings to advanced treatments like implants, root canals, whitening and orthodontics.",
   experienceYears: "10+",
   experienceTitle: "Years Of Experience",
   videoUrl:

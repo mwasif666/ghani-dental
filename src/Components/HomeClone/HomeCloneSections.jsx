@@ -22,20 +22,24 @@ import { ImageComparison } from "../ui/image-comparison-slider";
  * ----------------------------------------------------------- */
 const whyChooseFeatures = [
   {
-    title: "Friendly and Skilled Team:",
-    description: "Dentists who listen, explain, and treat with care.",
+    title: "Warm & Expert Team:",
+    description:
+      "Skilled dentists who truly listen to your concerns, explain everything clearly, and treat you with genuine care and professionalism.",
   },
   {
-    title: "Modern Equipment:",
-    description: "Safe, precise, and comfortable treatments every time.",
+    title: "Advanced Technology:",
+    description:
+      "Cutting-edge equipment designed to deliver safe, accurate, and remarkably comfortable treatments every visit.",
   },
   {
-    title: "Personalized Care:",
-    description: "Treatment plans that fit your needs and lifestyle.",
+    title: "Care Built Around You:",
+    description:
+      "Personalized treatment plans created to match your individual needs, lifestyle, and long-term oral health goals.",
   },
   {
-    title: "Trusted by Families:",
-    description: "Honest advice, fair pricing, and a reputation you can rely on.",
+    title: "A Clinic Families Trust:",
+    description:
+      "Known for honest guidance, transparent and fair pricing, and a reputation built on reliability and excellence.",
   },
 ];
 
@@ -51,17 +55,20 @@ const GdWhyChooseSection = () => (
         </div>
         <div className="gd_why_choose_content">
           <h2 className="gd_why_choose_title">
-            Why Choose Ghani Dental Clinic in Islamabad?
+            Why Families Choose Ghani Dental Clinic in Rawalpindi
           </h2>
           <p className="gd_why_choose_text">
-            At Ghani, we focus on giving you care that is safe, gentle, and
-            easy to understand. With modern tools and methods, our treatments
-            are quick and comfortable. Our team looks after your long-term oral
-            health, helping you keep strong teeth and healthy gums. Families
-            trust us for honest advice, fair pricing, and friendly care &mdash;
-            making every visit stress-free and welcoming.
+            At Ghani Dental Clinic, we believe everyone deserves gentle,
+            stress-free dental care in a warm and welcoming environment. Our
+            modern facility and advanced techniques allow us to provide fast,
+            comfortable treatments while keeping your safety as our top
+            priority. We go beyond fixing problems &mdash; our focus is on
+            building lasting oral health so you can enjoy strong teeth and
+            healthy gums for years ahead.
           </p>
-          <h3 className="gd_why_choose_subtitle">What Makes Ghani Special</h3>
+          <h3 className="gd_why_choose_subtitle">
+            What Sets Ghani Dental Clinic Apart
+          </h3>
           <ul className="gd_why_choose_list">
             {whyChooseFeatures.map((feature, idx) => (
               <li key={idx} className="gd_why_choose_item">
@@ -233,59 +240,35 @@ const GdServicesSection = () => {
  * ----------------------------------------------------------- */
 const dentistsData = [
   {
-    name: "Dr. Kaynaat Zamir",
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
+    name: "Dr. Abdul Mateen",
+    image: "/assets/img/doctors/doctor-1-2.jpg",
     qualifications: [
       "Dental Surgeon",
-      "BDS RDS",
-      "FCPS (Operative & Endodontics)",
-      "Certified Cosmetic Dentist",
+      "BDS (PAK), RDS (PM&DC)",
+      "FCPS II, OMFS PIMS",
+      "Ex-Demonstrator at FTH",
+      "PMDC: 23359-D",
     ],
   },
   {
-    name: "Dr. Baria Zareef",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
-    qualifications: [
-      "Dental Surgeon",
-      "BDS RDS",
-      "MDS (PGR)",
-      "Operative Dentistry & Endodontics",
-    ],
+    name: "Dr. Faizan Ul Haq",
+    image: "/assets/img/doctors/doctor-1-2.jpg",
+    qualifications: ["Dental Surgeon", "BDS, RDS", "PMDC: 24584-D"],
   },
   {
-    name: "Dr. Syed WaliUllah Shah",
-    image:
-      "https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=400&q=80",
-    qualifications: [
-      "Dental Surgeon",
-      "BDS, RDS",
-      "FCPS Endodontist",
-      "Cosmetic Dentist",
-    ],
+    name: "Dr. Toqir Ahmad",
+    image: "/assets/img/doctors/doctor-3.jpg",
+    qualifications: ["Dental Surgeon", "BDS, RDS, FCPS", "PMDC: 23065-D"],
   },
   {
-    name: "Dr. Sohaib Mansoor",
-    image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
-    qualifications: [
-      "BDS RDS",
-      "Oral & Maxillofacial Surgeon",
-      "PGT AFID",
-      "Senior Registrar PAF Hospital",
-    ],
+    name: "Dr. Nabila Shaikh",
+    image: "/assets/img/doctors/doctor4.webp",
+    qualifications: ["Dental Surgeon", "BDS, RDS", "PMDC: 24584-D"],
   },
   {
-    name: "Dr. Maryam Hafeez",
-    image:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
-    qualifications: [
-      "BDS RDS",
-      "Orthodontist",
-      "FCPS PGT Ortho",
-      "Certified Implantologist",
-    ],
+    name: "Dr. Waqar Hassan",
+    image: "/assets/img/doctors/doctor-5.jpg",
+    qualifications: ["Dental Surgeon"],
   },
 ];
 
@@ -300,7 +283,7 @@ const GdDentistsSection = () => (
             <br />
             Dentists In
             <br />
-            Islamabad
+            Rawalpindi
           </h2>
           <a href="/appointments" className="gd_dentist_btn">
             Appointment
@@ -331,10 +314,9 @@ const GdDentistsSection = () => (
  * 4. Why Patients Trust + Booking Form
  * ----------------------------------------------------------- */
 const trustPoints = [
-  "2 Branches in Islamabad",
-  "20000+ Happy Patients",
-  "15+ Years of Excellence in Dental Services",
-  "Team of 8+ Renowned Dentists with all dental specialties",
+  "5000+ Happy Patients who keep coming back",
+  "10+ Years of dental excellence",
+  "Team of 10+ Renowned Dentists covering every dental speciality",
 ];
 
 const GdTrustBookingSection = () => {
@@ -349,12 +331,14 @@ const GdTrustBookingSection = () => {
         <div className="gd_trust_booking_grid">
           <div className="gd_trust_content">
             <h2 className="gd_trust_title">
-              Why Patients Trust Our Dental Clinic
+              Why Patients Trust Ghani Dental Clinic
             </h2>
             <p className="gd_trust_text">
-              Patient comfort is our priority, and we utilize advanced
-              technology for accurate diagnosis and precise treatments,
-              guaranteeing the highest standard of care.
+              At Ghani Dental Clinic, your comfort and peace of mind come
+              first. We combine compassionate care with state-of-the-art
+              technology to deliver precise diagnoses and gentle, highly
+              accurate treatments &mdash; giving you exceptional results you can
+              count on.
             </p>
             <ul className="gd_trust_list">
               {trustPoints.map((point, idx) => (
@@ -617,11 +601,13 @@ const GdVisitClinicSection = () => (
           <h2 className="gd_visit_title">
             Visit Our Dental Clinic in Rawalpindi
           </h2>
+          <h3 className="gd_visit_subtitle">Proudly Serving Rawalpindi</h3>
           <p className="gd_visit_text">
-            We are proud to serve patients from Chungi #8, Muslim Town, Khanna,
-            Bahria Town and nearby areas in Rawalpindi &amp; Islamabad. Our
-            clinic provides modern dental care in a friendly and comfortable
-            environment.
+            We are proud to serve patients from Chungi #8 and all nearby areas
+            including Muslim Town, Sadiqabad, Khanna Pull (Khanna), Haji Chowk,
+            Khurram Colony, Band Khanna Road, Shakrial, and localities along
+            Adyala Road. Our clinic provides modern dental care in a friendly
+            and comfortable environment.
           </p>
           <h3 className="gd_visit_subtitle">Rawalpindi (Chungi #8)</h3>
           <ul className="gd_visit_info">
@@ -663,29 +649,31 @@ const GdVisitClinicSection = () => (
  * ----------------------------------------------------------- */
 const faqData = [
   {
-    question: "How to pick the right dental clinic in Islamabad?",
+    question:
+      "Where is Ghani Dental Clinic located in Rawalpindi? Best dental clinic near Chungi #8?",
     answer:
-      "Look for a clinic with qualified dentists, modern equipment, transparent pricing, and good patient reviews. At Ghani Dental Clinic, we offer experienced specialists, state-of-the-art technology, and a comfortable environment to make sure every visit feels stress-free.",
+      "Ghani Dental Clinic is conveniently located right at Chungi #8, Rawalpindi. We proudly serve patients from Chungi #8, Muslim Town, Sadiqabad, Khanna Pull (Khanna), Haji Chowk, Khurram Colony, Band Khanna Road, Shakrial, and all nearby areas along Adyala Road. Our modern, well-equipped clinic is easy to reach with ample parking, making it the preferred choice for quality dental care in the area.",
   },
   {
-    question: "How much does it cost to clean teeth in Islamabad?",
+    question: "How much do dental implants cost in Rawalpindi?",
     answer:
-      "Teeth cleaning (scaling and polishing) at Ghani Dental Clinic typically ranges from PKR 3,000 to PKR 6,000 depending on the buildup level and your individual requirements. We always provide a clear quote before starting any treatment.",
+      "At Ghani Dental Clinic Rawalpindi, we offer high-quality dental implants at competitive and transparent prices. The exact cost depends on the type of implant and your individual case, but we focus on making advanced implant treatment affordable without compromising on quality or safety. Visit us for a free consultation and get a personalized treatment plan with clear pricing.",
   },
   {
-    question: "Who is the best dentist in Islamabad?",
+    question: "What is the cost of braces in Rawalpindi?",
     answer:
-      "The best dentist for you depends on your specific needs. Our team at Ghani Dental Clinic includes qualified specialists in general dentistry, cosmetic dentistry, orthodontics, endodontics, and oral surgery so you can be matched with the right expert.",
+      "Braces treatment at Ghani Dental Clinic Rawalpindi is affordable and customized to your needs. Prices vary depending on whether you choose metal braces, ceramic braces, or clear aligners. We provide flexible payment plans so you can achieve a confident smile without financial stress. Book a free orthodontic consultation today for exact pricing and a personalized plan.",
   },
   {
-    question: "Who is the best female dentist in Islamabad?",
+    question: "Do you provide emergency dental care in Rawalpindi?",
     answer:
-      "Dr. Kaynaat Zamir, Dr. Baria Zareef, and Dr. Maryam Hafeez are highly qualified female dentists at Ghani Dental Clinic with FCPS, MDS, and certified specialty training, providing patient-focused dental care in Islamabad.",
+      "Yes! Ghani Dental Clinic offers prompt emergency dental services in Rawalpindi for severe toothache, swelling, broken or knocked-out teeth, and other urgent dental problems. Our experienced team is ready to provide fast, gentle relief. Contact us immediately for same-day emergency appointments.",
   },
   {
-    question: "Where can I get dental implants in Islamabad?",
+    question:
+      "Is dental treatment painful? Do you offer painless root canal treatment?",
     answer:
-      "You can get safe and reliable dental implants at Ghani Dental Clinic, F-8 Markaz Islamabad. Our implant specialists use modern titanium implant systems for permanent, natural-looking, and long-lasting results.",
+      "At Ghani Dental Clinic, your comfort is our top priority. We use advanced technology, modern anesthesia techniques, and gentle methods to make every procedure — including root canal treatment — as painless and comfortable as possible. Most of our patients are surprised at how relaxed and stress-free their experience is.",
   },
 ];
 
@@ -696,8 +684,11 @@ const GdFaqSection = () => {
     <section className="gd_faq_section">
       <div className="container">
         <div className="gd_faq_head">
-          <h2 className="gd_faq_title">Frequently Asked Questions</h2>
-          <p className="gd_faq_subtitle">Quick answers to common queries</p>
+          <h2 className="gd_faq_title">Frequently Asked Questions By Customers</h2>
+          <p className="gd_faq_subtitle">
+            We&apos;ve answered the most common questions our patients ask
+            about dental care.
+          </p>
         </div>
         <div className="gd_faq_list">
           {faqData.map((item, idx) => {
@@ -745,30 +736,30 @@ const blogsList = [
     image:
       "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80",
     title:
-      "Biocompatible and Eco-Friendly Materials: The Future of Cosmetic Dentistry",
+      "Dental Implants Cost in Rawalpindi 2026: Complete Price Guide & What to Expect",
     date: "2025-02-22",
     excerpt:
-      "Cosmetic dentistry is evolving. Beyond aesthetics, people now want safe, durable, and",
+      "Discover the actual cost of dental implants in Rawalpindi, latest techniques, success rates, recovery timeline, and how Ghani Dental Clinic makes permanent tooth replacement affordable and stress-free near Chungi #8.",
     tag: "Cosmetic dentistry",
   },
   {
     image:
       "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
     title:
-      "Braces, Aligners, and Beyond: The Evolution of Orthodontic Treatments",
+      "Teeth Whitening in Rawalpindi: Professional Treatment Cost, Results & How Long It Lasts",
     date: "2025-02-26",
     excerpt:
-      "Orthodontics has progressed from traditional metal braces to modern, nearly invisible solutions.",
+      "Get a brighter, confident smile with safe professional teeth whitening in Rawalpindi. Learn about current prices, treatment options, sensitivity-free methods, and tips to maintain long-lasting results at Ghani Dental Clinic.",
     tag: "Orthodontics",
   },
   {
     image:
       "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
     title:
-      "Next-Gen Dental Implants: Innovations, Costs, and What to Expect",
+      "Root Canal Treatment in Rawalpindi: Is It Really Painful? Cost, Procedure & Modern Solutions",
     date: "2025-02-23",
     excerpt:
-      "Dental implants have revolutionized oral healthcare, offering a permanent solution for",
+      "Clear your doubts about root canal pain and cost in Rawalpindi. This guide explains the modern, virtually painless procedure, exact pricing, and why patients trust Ghani Dental Clinic for comfortable and successful root canal treatment.",
     tag: "Diagnostic",
   },
 ];

@@ -177,7 +177,7 @@
   display: inline-flex;
   align-items: center;
   min-width: max-content;
-  animation: csOpenMarquee 22s linear infinite;
+  animation: csOpenMarquee 36s linear infinite;
 }
 .cs_site_header.cs_style_1 .cs_open_marquee_item {
   display: inline-flex;
@@ -2348,6 +2348,8 @@ section.cs_breadcrumb > *,
 .cs_hero.cs_style_2 .cs_hero_title,
 .cs_hero.cs_style_3 .cs_hero_title {
   color: #fff;
+  font-size: 58px;
+  line-height: 1.08;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
 }
 .cs_hero.cs_style_1 .cs_hero_subtitle,

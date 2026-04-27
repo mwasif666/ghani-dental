@@ -8,7 +8,7 @@ const Header = ({ isTopBar, variant }) => {
   const [openMobileSubmenuIndex, setOpenMobileSubmenuIndex] = useState([]);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isSticky, setIsSticky] = useState();
-  const openMarqueeItems = Array(10).fill('24 Hour Open');
+  const openMarqueeItems = Array(10).fill('24/7 Dental Clinic in Rawalpindi');
   const menu = {
     email: 'info@ghanidental.com',
     branchF8: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi',
@@ -225,7 +225,10 @@ const Header = ({ isTopBar, variant }) => {
         </div>
         {isTopBar && (
           <div className="cs_bottom_header_marquee cs_white_color">
-            <div className="cs_open_marquee_track" aria-label="24 Hour Open">
+            <div
+              className="cs_open_marquee_track"
+              aria-label="24/7 Dental Clinic in Rawalpindi"
+            >
               {[...openMarqueeItems, ...openMarqueeItems].map((item, index) => (
                 <span className="cs_open_marquee_item" key={index}>
                   {item}
