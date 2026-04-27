@@ -13,7 +13,7 @@ const Header = ({ isTopBar, variant }) => {
     email: 'info@ghanidental.com',
     branchF8: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi',
     branchI8: '',
-    phone: '03334425828',
+    phone: '0333 4425828',
     phoneLink: '03334425828',
     socialLinks: {
       facebook: 'https://facebook.com',

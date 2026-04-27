@@ -19,6 +19,7 @@ import ScrollUpButton from './Components/ScrollUpButton';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { useEffect } from 'react';
+import { FaPhone, FaWhatsapp } from 'react-icons/fa6';
 
 function App() {
   Aos.init({
@@ -94,6 +95,22 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
+      <a
+        href="tel:03334425828"
+        aria-label="Call 0333 4425828"
+        className="cs_float_btn cs_float_phone"
+      >
+        <FaPhone size={22} />
+      </a>
+      <a
+        href="https://wa.me/923334425828"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp 0333 4425828"
+        className="cs_float_btn cs_float_whatsapp"
+      >
+        <FaWhatsapp size={24} />
+      </a>
       <ScrollUpButton />
     </>
   );

@@ -252,7 +252,7 @@ const dentistsData = [
   },
   {
     name: "Dr. Faizan Ul Haq",
-    image: "/assets/img/doctors/doctor-1-2.jpg",
+    image: "/assets/img/doctors/no-image.svg",
     qualifications: ["Dental Surgeon", "BDS, RDS", "PMDC: 24584-D"],
   },
   {
@@ -262,7 +262,7 @@ const dentistsData = [
   },
   {
     name: "Dr. Nabila Shaikh",
-    image: "/assets/img/doctors/doctor4.webp",
+    image: "/assets/img/doctors/no-image.svg",
     qualifications: ["Dental Surgeon", "BDS, RDS", "PMDC: 24584-D"],
   },
   {
@@ -591,7 +591,7 @@ const GdVisitClinicSection = () => (
         <div className="gd_visit_map">
           <iframe
             title="Ghani Dental Care Center Rawalpindi location"
-            src="https://www.google.com/maps?hl=en&q=Shop%20%236%2C%20Muslim%20Town%2C%20Band%20Khanna%20Rd%2C%20Chungi%20%238%2C%20Rawalpindi&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.1725757236704!2d73.0869873807349!3d33.626767071303746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa9aa8b7e8a28fb3%3A0x5ff3a2ff997f9c0a!2sGhani%20Dental%20Care%20Center!5e0!3m2!1sen!2s!4v1777278508608!5m2!1sen!2s"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
@@ -609,7 +609,6 @@ const GdVisitClinicSection = () => (
             Adyala Road. Our clinic provides modern dental care in a friendly
             and comfortable environment.
           </p>
-          <h3 className="gd_visit_subtitle">Rawalpindi (Chungi #8)</h3>
           <ul className="gd_visit_info">
             <li>
               <span className="gd_visit_info_icon">

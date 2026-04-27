@@ -33,7 +33,7 @@ const heroData = {
       contactSubtitle:
         "Searching for a reliable dentist near you in Rawalpindi? We provide comprehensive dental services, from preventive care to cosmetic dentistry. Book your appointment today for expert care and a brighter smile.",
       contactTitle: "Book Your Appointment Today",
-      contact: "Call Us: +92 300 1234567",
+      contact: "Call Us: 0333 4425828",
       btnText1: "Book Appointment",
       link: "/appointments",
       btnText2: "Our Services",
@@ -46,8 +46,8 @@ const heroData = {
       title: "Modern Dentistry for <br>Every <span>Family.</span>",
       contactSubtitle:
         "I-8 aur F-8 Islamabad mein hamari clinics offer karti hain general, cosmetic, orthodontics aur implant treatments – sab kuch ek hi chhat ke neeche.",
-      contactTitle: "Visit Our I-8 / F-8 Branch",
-      contact: "Call Us: +92 300 1234567",
+      contactTitle: "Book Your Appointment Today",
+      contact: "Call Us: 0333 4425828",
       btnText1: "Book Appointment",
       link: "/appointments",
       btnText2: "About Us",
@@ -977,7 +977,7 @@ const MainHome = () => {
                 Call Our Dentist For A Consultation
               </span>
               <a className="gd_intro_call_phone" href="tel:03334425828">
-                03334425828
+                0333 4425828
               </a>
             </div>
           </div>
@@ -992,24 +992,16 @@ const MainHome = () => {
                   in Islamabad
                 </h1>
                 <p>
-                  <span>Ghani Dental Clinic</span> is a trusted destination
-                  for modern and patient-focused dental care in Islamabad. Since
-                  2018, our experienced dentists have helped families maintain
-                  healthy teeth and confident smiles through safe and gentle
-                  treatments.
+                  At Ghani Dental Care Centre we combine advanced dental
+                  technology with genuine compassion and personalized care. Our
+                  experienced team delivers gentle, high-quality treatments in a
+                  comfortable environment, helping every patient achieve lasting
+                  oral health and a confident smile.
                 </p>
                 <p>
-                  We serve patients from two convenient locations: F-8 Markaz
-                  Islamabad and I-8 Markaz Islamabad, making professional dental
-                  care easy to access no matter where you are.
-                </p>
-                <p>
-                  From routine checkups and teeth cleaning to advanced
-                  procedures like dental implants and root canal therapy, our
-                  team provides personalized care using modern dental
-                  technology. At Ghani Dental Clinic, you&rsquo;re not just a
-                  patient&mdash;you&rsquo;re part of our dental family, and
-                  every visit is designed to be comfortable and stress-free.
+                  We offer complete dental care for every age and every need,
+                  from routine checkups and cleanings to advanced treatments
+                  like implants, root canals, whitening and orthodontics.
                 </p>
               </div>
 
