@@ -45,7 +45,7 @@ const heroData = {
         "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80",
       title: "Modern Dentistry for <br>Every <span>Family.</span>",
       contactSubtitle:
-        "I-8 aur F-8 Islamabad mein hamari clinics offer karti hain general, cosmetic, orthodontics aur implant treatments – sab kuch ek hi chhat ke neeche.",
+        "Searching for a reliable dentist near you in Rawalpindi? We provide comprehensive dental services, from preventive care to cosmetic dentistry. Book your appointment today for expert care and a brighter smile.",
       contactTitle: "Book Your Appointment Today",
       contact: "Call Us: 0333 4425828",
       btnText1: "Book Appointment",
@@ -94,7 +94,7 @@ const ctaData3 = {
 const aboutData = {
   sectionSubtitle: "About Us",
   sectionTitle:
-    "Welcome to Ghani Dental Clinic – Your Family Dentist in Islamabad",
+    "Welcome to Ghani Dental Clinic – Your Family Dentist in Rawalpindi",
   aboutText:
     "At Ghani Dental Care Centre we combine advanced dental technology with genuine compassion and personalized care. Our experienced team delivers gentle, high-quality treatments in a comfortable environment, helping every patient achieve lasting oral health and a confident smile.",
   service:
@@ -989,7 +989,7 @@ const MainHome = () => {
               <div className="gd_intro_text">
                 <h1>
                   Welcome to Ghani Dental Clinic &ndash; Your Family Dentist
-                  in Islamabad
+                  in Rawalpindi
                 </h1>
                 <p>
                   At Ghani Dental Care Centre we combine advanced dental
