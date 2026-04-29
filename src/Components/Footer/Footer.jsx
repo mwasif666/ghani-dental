@@ -213,11 +213,11 @@ const Footer = () => {
               <span className="gd_footer_dev">
                 Developed by{' '}
                 <a
-                  href="https://innovationpixel.com"
+                  href="https://wa.me/923379910622"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  InnovationPixel
+                  Konnect Digi
                 </a>
               </span>
             </p>
