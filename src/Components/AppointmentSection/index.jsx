@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+const SOCIAL_REDIRECT_URL = "https://www.facebook.com/share/1CGB43veC9/";
+
 const AppointmentSection = ({ data }) => {
   return (
     <>
@@ -31,8 +33,8 @@ const AppointmentSection = ({ data }) => {
                 </h3>
                 <p className="cs_team_subtitle">{doctor.specialty}</p>
                 <div className="cs_social_btns cs_style_1">
-                  <Link
-                    to={doctor.iconUrl}
+                  <a
+                    href={SOCIAL_REDIRECT_URL}
                     className="cs_center"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -41,9 +43,9 @@ const AppointmentSection = ({ data }) => {
                       {" "}
                       <FaFacebookF />
                     </i>
-                  </Link>{" "}
-                  <Link
-                    to={doctor.iconUrl2}
+                  </a>{" "}
+                  <a
+                    href={SOCIAL_REDIRECT_URL}
                     className="cs_center"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -52,9 +54,9 @@ const AppointmentSection = ({ data }) => {
                       {" "}
                       <FaPinterestP />
                     </i>
-                  </Link>{" "}
-                  <Link
-                    to={doctor.iconUrl3}
+                  </a>{" "}
+                  <a
+                    href={SOCIAL_REDIRECT_URL}
                     className="cs_center"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -63,9 +65,9 @@ const AppointmentSection = ({ data }) => {
                       {" "}
                       <FaTwitter />
                     </i>
-                  </Link>{" "}
+                  </a>{" "}
                   <a
-                    href={doctor.iconUrl}
+                    href={SOCIAL_REDIRECT_URL}
                     className="cs_center"
                     target="_blank"
                     rel="noopener noreferrer"

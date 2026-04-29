@@ -3,6 +3,8 @@ import { FaAnglesRight, FaLocationDot, FaPhone } from 'react-icons/fa6';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+const SOCIAL_REDIRECT_URL = 'https://www.facebook.com/share/1CGB43veC9/';
+
 const Header = ({ isTopBar, variant }) => {
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
   const [openMobileSubmenuIndex, setOpenMobileSubmenuIndex] = useState([]);
@@ -16,9 +18,9 @@ const Header = ({ isTopBar, variant }) => {
     phone: '0333 4425828',
     phoneLink: '03334425828',
     socialLinks: {
-      facebook: 'https://facebook.com',
-      instagram: 'https://instagram.com',
-      linkedin: 'https://linkedin.com',
+      facebook: SOCIAL_REDIRECT_URL,
+      instagram: SOCIAL_REDIRECT_URL,
+      linkedin: SOCIAL_REDIRECT_URL,
     },
     logoUrl: '/assets/img/logo.png',
     logoLink: '/',

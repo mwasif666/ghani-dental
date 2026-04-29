@@ -9,6 +9,8 @@ import Slider from "react-slick";
 import SectionHeading from "../SectionHeading";
 import Spacing from "../Spacing";
 
+const SOCIAL_REDIRECT_URL = "https://www.facebook.com/share/1CGB43veC9/";
+
 const TeamSection = ({ data, bgColor, variant, hr }) => {
   const settings = {
     dots: true,
@@ -84,26 +86,46 @@ const TeamSection = ({ data, bgColor, variant, hr }) => {
                             {item.profession}
                           </p>
                           <div className="cs_social_btns cs_style_1">
-                            <Link to={item.facebook} className="cs_center">
+                            <a
+                              href={SOCIAL_REDIRECT_URL}
+                              className="cs_center"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <i>
                                 <FaFacebookF />
                               </i>
-                            </Link>
-                            <Link to={item.pinterest} className="cs_center">
+                            </a>
+                            <a
+                              href={SOCIAL_REDIRECT_URL}
+                              className="cs_center"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <i>
                                 <FaPinterestP />
                               </i>
-                            </Link>
-                            <Link to={item.twitter} className="cs_center">
+                            </a>
+                            <a
+                              href={SOCIAL_REDIRECT_URL}
+                              className="cs_center"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <i>
                                 <FaTwitter />
                               </i>
-                            </Link>
-                            <Link to={item.instagram} className="cs_center">
+                            </a>
+                            <a
+                              href={SOCIAL_REDIRECT_URL}
+                              className="cs_center"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <i>
                                 <FaInstagram />
                               </i>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>

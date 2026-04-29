@@ -12,6 +12,8 @@ import {
   FaIdCard,
 } from 'react-icons/fa6';
 
+const SOCIAL_REDIRECT_URL = 'https://www.facebook.com/share/1CGB43veC9/';
+
 const data = {
   brand: 'Ghani Dental Care Center',
   description:
@@ -20,10 +22,10 @@ const data = {
   newsletterImg:
     'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80',
   socials: {
-    facebook: 'https://facebook.com',
-    twitter: 'https://twitter.com',
-    linkedin: 'https://linkedin.com',
-    email: 'mailto:info@ghanidental.com',
+    facebook: SOCIAL_REDIRECT_URL,
+    twitter: SOCIAL_REDIRECT_URL,
+    linkedin: SOCIAL_REDIRECT_URL,
+    email: SOCIAL_REDIRECT_URL,
   },
   contact: {
     address: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi.',
@@ -131,7 +133,12 @@ const Footer = () => {
                 >
                   <FaLinkedinIn />
                 </a>
-                <a href={data.socials.email} aria-label="Email">
+                <a
+                  href={data.socials.email}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Email"
+                >
                   <FaEnvelope />
                 </a>
               </div>
