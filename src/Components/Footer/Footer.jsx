@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa6';
 
 const SOCIAL_REDIRECT_URL = 'https://www.facebook.com/share/1CGB43veC9/';
+const SHOW_LEGAL_LINKS = false;
 
 const data = {
   brand: 'Ghani Dental Care Center',
@@ -212,19 +213,21 @@ const Footer = () => {
               <span className="gd_footer_dev">
                 Developed by{' '}
                 <a
-                  href="https://konnectdigi.com"
+                  href="https://innovationpixel.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Konnect Digi
+                  InnovationPixel
                 </a>
               </span>
             </p>
-            <div className="gd_footer_legal">
-              <Link to="/terms">Terms &amp; Conditions</Link>
-              <span className="gd_footer_sep">|</span>
-              <Link to="/privacy">Privacy Policy</Link>
-            </div>
+            {SHOW_LEGAL_LINKS && (
+              <div className="gd_footer_legal">
+                <Link to="/terms">Terms &amp; Conditions</Link>
+                <span className="gd_footer_sep">|</span>
+                <Link to="/privacy">Privacy Policy</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
