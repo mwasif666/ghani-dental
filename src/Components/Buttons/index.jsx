@@ -1,14 +1,16 @@
+const WHATSAPP_URL = 'https://wa.me/923334425828';
+
 const Button = ({ btnUrl = '#', btnText, variant, btnIcons }) => {
-  const handleClick = e => {
-    e.preventDefault();
-  };
+  const href = btnUrl === '/appointments' ? WHATSAPP_URL : btnUrl;
+  const isNewTabLink =
+    href.includes('wa.me') || href.startsWith('http://') || href.startsWith('https://');
 
   return (
     <a
-      href="#"
-      data-href={btnUrl}
-      className={`${variant || ''} cs_nav_link_disabled`}
-      onClick={handleClick}
+      href={href}
+      className={`${variant || ''}`}
+      target={isNewTabLink ? '_blank' : undefined}
+      rel={isNewTabLink ? 'noopener noreferrer' : undefined}
     >
       <span>{btnText}</span>
       {btnIcons && <i>{btnIcons}</i>}

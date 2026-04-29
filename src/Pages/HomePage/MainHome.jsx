@@ -35,7 +35,7 @@ const heroData = {
       contactTitle: "Book Your Appointment Today",
       contact: "Call Us: 0333 4425828",
       btnText1: "Book Appointment",
-      link: "/appointments",
+      link: "https://wa.me/923334425828",
       btnText2: "Our Services",
       link2: "/service",
       iconImgUrl: "assets/img/icons/hero_icon.png",
@@ -49,7 +49,7 @@ const heroData = {
       contactTitle: "Book Your Appointment Today",
       contact: "Call Us: 0333 4425828",
       btnText1: "Book Appointment",
-      link: "/appointments",
+      link: "https://wa.me/923334425828",
       btnText2: "About Us",
       link2: "/about",
       iconImgUrl: "assets/img/icons/hero_icon.png",
@@ -65,7 +65,7 @@ const ctaData = {
   imageUrl: "/assets/img/cta_img_1.jpg",
   title: "Meet The Team Support Medical Service.",
   subtitle: "For us, there are no minor aspects, because a quality",
-  buttonUrl: "/appointments",
+  buttonUrl: "https://wa.me/923334425828",
   buttonText: "Booking Now",
 };
 
@@ -88,7 +88,7 @@ const ctaData3 = {
   title: "Meet The Team Support Dental Service.",
   subtitle: "For us, there are no minor aspects, because a quality",
   buttonText: "Booking Now",
-  buttonLink: "/appointments",
+  buttonLink: "https://wa.me/923334425828",
 };
 
 const aboutData = {

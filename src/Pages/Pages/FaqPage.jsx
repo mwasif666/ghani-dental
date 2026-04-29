@@ -1,12 +1,12 @@
 import PageHeading from '../../Components/PageHeading';
 import Section from '../../Components/Section';
-import { GdServicesSection } from '../../Components/HomeClone/HomeCloneSections';
+import { GdFaqSection } from '../../Components/HomeClone/HomeCloneSections';
 
 const headingData = {
-  title: 'Service',
+  title: 'FAQ',
 };
 
-const ServicePage = () => {
+const FaqPage = () => {
   return (
     <>
       <Section
@@ -15,9 +15,9 @@ const ServicePage = () => {
       >
         <PageHeading data={headingData} />
       </Section>
-      <GdServicesSection />
+      <GdFaqSection />
     </>
   );
 };
 
-export default ServicePage;
+export default FaqPage;

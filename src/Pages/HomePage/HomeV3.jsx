@@ -79,7 +79,7 @@ const ctaData = {
   title: 'Meet The Team Support Medical Service.',
   subtitle: 'For us, there are no minor aspects, because a quality',
   buttonText: 'Booking Now',
-  buttonLink: '/appointments',
+  buttonLink: 'https://wa.me/923334425828',
 };
 
 const aboutData = {

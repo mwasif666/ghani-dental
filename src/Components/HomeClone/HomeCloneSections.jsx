@@ -149,7 +149,7 @@ const dentalServices = [
   },
 ];
 
-const GdServicesSection = () => {
+export const GdServicesSection = () => {
   const featuredServices = dentalServices.filter((s) => s.featured);
   const otherServices = dentalServices.filter((s) => !s.featured);
 
@@ -272,7 +272,7 @@ const dentistsData = [
   },
 ];
 
-const GdDentistsSection = () => (
+export const GdDentistsSection = () => (
   <section className="gd_dentists_section">
     <div className="container">
       <div className="gd_dentists_grid">
@@ -285,7 +285,7 @@ const GdDentistsSection = () => (
             <br />
             Rawalpindi
           </h2>
-          <a href="/appointments" className="gd_dentist_btn">
+          <a href="https://wa.me/923334425828" target="_blank" rel="noopener noreferrer" className="gd_dentist_btn">
             Appointment
           </a>
         </article>
@@ -300,7 +300,7 @@ const GdDentistsSection = () => (
                 <li key={i}>{q}</li>
               ))}
             </ul>
-            <a href="/appointments" className="gd_dentist_btn">
+            <a href="https://wa.me/923334425828" target="_blank" rel="noopener noreferrer" className="gd_dentist_btn">
               Appointment
             </a>
           </article>
@@ -319,9 +319,10 @@ const trustPoints = [
   "Team of 10+ Renowned Dentists covering every dental speciality",
 ];
 
-const GdTrustBookingSection = () => {
+export const GdTrustBookingSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    window.open("https://wa.me/923334425828", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -485,7 +486,7 @@ const calcAverageRating = () => {
   return (total / testimonialsData.length).toFixed(1);
 };
 
-const GdTestimonialsSection = () => {
+export const GdTestimonialsSection = () => {
   const totalReviews = testimonialsData.length;
   const averageRating = calcAverageRating();
 
@@ -584,7 +585,7 @@ const GdTestimonialsSection = () => {
 /* -----------------------------------------------------------
  * 6. Visit Our Clinic + Map
  * ----------------------------------------------------------- */
-const GdVisitClinicSection = () => (
+export const GdVisitClinicSection = () => (
   <section className="gd_visit_clinic_section">
     <div className="container">
       <div className="gd_visit_grid">
@@ -676,7 +677,7 @@ const faqData = [
   },
 ];
 
-const GdFaqSection = () => {
+export const GdFaqSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -721,15 +722,6 @@ const GdFaqSection = () => {
 /* -----------------------------------------------------------
  * 8. Our Blogs
  * ----------------------------------------------------------- */
-const blogTags = [
-  "All",
-  "Orthodontics",
-  "Cleaning",
-  "Diagnostic",
-  "Cosmetic dentistry",
-  "Antifrazz Technology",
-];
-
 const blogsList = [
   {
     image:
@@ -763,14 +755,7 @@ const blogsList = [
   },
 ];
 
-const GdBlogsSection = () => {
-  const [activeTag, setActiveTag] = useState("All");
-
-  const filteredBlogs =
-    activeTag === "All"
-      ? blogsList
-      : blogsList.filter((b) => b.tag === activeTag);
-
+export const GdBlogsSection = () => {
   return (
     <section className="gd_blogs_section">
       <div className="container">
@@ -788,21 +773,8 @@ const GdBlogsSection = () => {
           </a>
         </div>
 
-        <div className="gd_blogs_tags">
-          {blogTags.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              className={`gd_blogs_tag${activeTag === tag ? " gd_blogs_tag_active" : ""}`}
-              onClick={() => setActiveTag(tag)}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-
         <div className="gd_blogs_grid">
-          {filteredBlogs.map((post, idx) => (
+          {blogsList.map((post, idx) => (
             <article key={idx} className="gd_blog_card">
               <a href="/blog/blog-details" className="gd_blog_thumb">
                 <img src={post.image} alt={post.title} />
@@ -827,7 +799,7 @@ const GdBlogsSection = () => {
 /* -----------------------------------------------------------
  * 9. Love Your Visit – Review CTA
  * ----------------------------------------------------------- */
-const GdReviewCtaSection = () => (
+export const GdReviewCtaSection = () => (
   <section className="gd_review_cta_section">
     <div className="container">
       <div className="gd_review_card">
@@ -856,7 +828,9 @@ const GdReviewCtaSection = () => (
             <span>Leave a Google Review</span>
           </a>
           <a
-            href="/appointments"
+            href="https://wa.me/923334425828"
+            target="_blank"
+            rel="noopener noreferrer"
             className="gd_review_btn gd_review_btn_blue"
           >
             <FaRegStarHalfStroke aria-hidden="true" />

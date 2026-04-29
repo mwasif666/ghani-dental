@@ -28,6 +28,7 @@ const Header = ({ isTopBar, variant }) => {
         label: 'Services',
         href: '/service',
         subItems: [
+          { label: 'All Services', href: '/service' },
           { label: 'Braces & Orthodontics', href: '/service/braces-orthodontics' },
           { label: 'Dental Fillings', href: '/service/dental-fillings' },
           { label: 'Tooth Extraction', href: '/service/tooth-extraction' },
@@ -39,12 +40,12 @@ const Header = ({ isTopBar, variant }) => {
         ],
       },
       { label: 'Dental Docters', href: '/doctors' },
-      { label: 'Testimonials', href: '/testimonial' },
+      { label: 'Testimonials', href: '/testimonials' },
       { label: 'Blog', href: '/blog' },
       { label: 'About Us', href: '/about' },
       { label: 'Contact Us', href: '/contact' },
     ],
-    btnUrl: '/appointments',
+    btnUrl: 'https://wa.me/923334425828',
     btnText: 'Appointment',
   };
 
@@ -78,7 +79,7 @@ const Header = ({ isTopBar, variant }) => {
       <header
         className={`cs_site_header cs_style_1 ${
           variant ? variant : ''
-        } cs_primary_color cs_sticky_header ${isSticky ? isSticky : ''}`}
+        } ${isTopBar ? 'cs_header_home' : 'cs_header_inner'} cs_primary_color cs_sticky_header ${isSticky ? isSticky : ''}`}
       >
         {isTopBar && (
           <div className="cs_top_header cs_branch_bar cs_white_color">
@@ -152,18 +153,14 @@ const Header = ({ isTopBar, variant }) => {
                         }
                         key={index}
                       >
-                        <a
-                          href="#"
-                          className="cs_nav_link_disabled"
-                          onClick={e => {
-                            e.preventDefault();
-                            if (item.subItems) {
-                              handleOpenMobileSubmenu(index);
-                            }
+                        <Link
+                          to={item.href}
+                          onClick={() => {
+                            if (!item.subItems) setIsShowMobileMenu(false);
                           }}
                         >
                           {item.label}
-                        </a>
+                        </Link>
                         {item.subItems && (
                           <ul
                             style={{
@@ -174,13 +171,12 @@ const Header = ({ isTopBar, variant }) => {
                           >
                             {item.subItems.map((subItem, subIndex) => (
                               <li key={subIndex}>
-                                <a
-                                  href="#"
-                                  className="cs_nav_link_disabled"
-                                  onClick={e => e.preventDefault()}
+                                <Link
+                                  to={subItem.href}
+                                  onClick={() => setIsShowMobileMenu(false)}
                                 >
                                   {subItem.label}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -199,6 +195,20 @@ const Header = ({ isTopBar, variant }) => {
                         )}
                       </li>
                     ))}
+                    <li className="gd_mobile_menu_appointment">
+                      <a
+                        href={menu.btnUrl}
+                        className="cs_btn cs_style_1 cs_color_1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsShowMobileMenu(false)}
+                      >
+                        <span>{menu.btnText}</span>
+                        <i>
+                          <FaAnglesRight />
+                        </i>
+                      </a>
+                    </li>
                   </ul>
                   <span
                     className={`cs_menu_toggle ${
@@ -210,9 +220,10 @@ const Header = ({ isTopBar, variant }) => {
                   </span>
                 </div>
                 <a
-                  href="#"
-                  className="cs_btn cs_style_1 cs_color_1 cs_nav_link_disabled"
-                  onClick={e => e.preventDefault()}
+                  href={menu.btnUrl}
+                  className="cs_btn cs_style_1 cs_color_1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span>{menu.btnText}</span>
                   <i>

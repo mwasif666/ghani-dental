@@ -2352,10 +2352,10 @@ label {
   }
 
   .cs_page_title {
-    font-size: 66px;
+    font-size: 50px;
     margin-bottom: 12px;
     @media (max-width: 991px) {
-      font-size: 48px;
+      font-size: 32px;
     }
   }
 }
@@ -2426,8 +2426,8 @@ i {
 
 .cs_scrollup {
   position: fixed;
-  bottom: 60px;
-  right: 25px;
+  bottom: 90px;
+  right: 30px;
   padding: 14px;
   height: 45px;
   width: 45px;
@@ -2448,7 +2448,7 @@ i {
 }
 
 .cs_scrollup.cs_scrollup_show {
-  bottom: 30px;
+  bottom: 90px;
 }
 .rr--off .rr--svg {
   fill: transparent;

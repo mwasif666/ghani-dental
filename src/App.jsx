@@ -6,15 +6,24 @@ import HomeV3 from './Pages/HomePage/HomeV3';
 import AboutPage from './Pages/AboutPage/AboutPage';
 import ServicePage from './Pages/Service/ServicePage';
 import ServiceDetails from './Pages/Service/ServiceDetails';
+import BracesOrthodonticsPage from './Pages/Service/BracesOrthodonticsPage';
+import DentalFillingsPage from './Pages/Service/DentalFillingsPage';
+import ToothExtractionPage from './Pages/Service/ToothExtractionPage';
+import ScalingPolishingPage from './Pages/Service/ScalingPolishingPage';
+import RootCanalTreatmentPage from './Pages/Service/RootCanalTreatmentPage';
+import TeethWhiteningPage from './Pages/Service/TeethWhiteningPage';
+import DentalImplantsPage from './Pages/Service/DentalImplantsPage';
+import CrownsBridgesPage from './Pages/Service/CrownsBridgesPage';
 import BlogsPage from './Pages/BlogsPage/BlogsPage';
 import BlogsDetails from './Pages/BlogsPage/BlogsDetails';
 import DoctorsPage from './Pages/Pages/DoctorsPage';
 import DoctorsDetailsPage from './Pages/Pages/DoctorsDetailsPage';
+import TestimonialsPage from './Pages/Pages/TestimonialsPage';
+import FaqPage from './Pages/Pages/FaqPage';
 import TimeTablePage from './Pages/Pages/TimeTablePage';
 import PortfolioPage from './Pages/Pages/PortfolioPage';
 import ErrorPage from './Pages/Pages/ErrorPage';
 import ContactPage from './Pages/ContactPage/ContactPage';
-import Appointments from './Pages/Pages/Appointments';
 import ScrollUpButton from './Components/ScrollUpButton';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
@@ -33,42 +42,6 @@ function App() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Globally disable all internal navigation while pages are still in development.
-  // External protocols (tel:, mailto:, https://wa.me, etc.) keep working.
-  useEffect(() => {
-    const allowedProtocols = ['tel:', 'mailto:', 'sms:', 'whatsapp:'];
-    const allowedExternalHosts = ['wa.me', 'api.whatsapp.com', 'web.whatsapp.com'];
-
-    const handler = e => {
-      const anchor = e.target.closest && e.target.closest('a');
-      if (!anchor) return;
-      const href = anchor.getAttribute('href');
-      if (!href) return;
-
-      // Allow protocol-based links (tel/mailto/sms/whatsapp)
-      if (allowedProtocols.some(p => href.startsWith(p))) return;
-
-      // Allow whitelisted external hosts (wa.me etc.)
-      try {
-        const url = new URL(href, window.location.origin);
-        const isSameOrigin = url.origin === window.location.origin;
-        if (
-          !isSameOrigin &&
-          allowedExternalHosts.some(h => url.hostname.includes(h))
-        ) {
-          return;
-        }
-      } catch {
-        /* ignore parse errors */
-      }
-
-      e.preventDefault();
-      e.stopPropagation();
-    };
-
-    document.addEventListener('click', handler, true);
-    return () => document.removeEventListener('click', handler, true);
-  }, []);
   return (
     <>
       <Routes>
@@ -82,12 +55,21 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/service" element={<ServicePage />} />
+          <Route path="/service/braces-orthodontics" element={<BracesOrthodonticsPage />} />
+          <Route path="/service/dental-fillings" element={<DentalFillingsPage />} />
+          <Route path="/service/tooth-extraction" element={<ToothExtractionPage />} />
+          <Route path="/service/scaling-polishing" element={<ScalingPolishingPage />} />
+          <Route path="/service/root-canal-treatment" element={<RootCanalTreatmentPage />} />
+          <Route path="/service/teeth-whitening" element={<TeethWhiteningPage />} />
+          <Route path="/service/dental-implants" element={<DentalImplantsPage />} />
+          <Route path="/service/crowns-bridges" element={<CrownsBridgesPage />} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
           <Route path="/blog" element={<BlogsPage />} />
           <Route path="/blog/:blogId" element={<BlogsDetails />} />
-          <Route path="/appointments" element={<Appointments />} />
           <Route path="/doctors" element={<DoctorsPage />} />
           <Route path="/doctors/:doctorId" element={<DoctorsDetailsPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/faq" element={<FaqPage />} />
           <Route path="/timetable" element={<TimeTablePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/error" element={<ErrorPage />} />

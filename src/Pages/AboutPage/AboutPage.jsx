@@ -1,201 +1,105 @@
-import About from '../../Components/About';
-import CtaSection1 from '../../Components/CtaSection.jsx/CtaSection1';
-import CounterSection2 from '../../Components/FunSection/CounterSection2';
 import PageHeading from '../../Components/PageHeading';
 import Section from '../../Components/Section';
-import TeamSection from '../../Components/TeamSection';
+import {
+  GdFaqSection,
+  GdReviewCtaSection,
+  GdTestimonialsSection,
+  GdTrustBookingSection,
+  GdVisitClinicSection,
+} from '../../Components/HomeClone/HomeCloneSections';
 
 const headingData = {
-  title: 'About Page',
-};
-
-const aboutData = {
-  sectionSubtitle: 'OUR ABOUT US',
-  sectionTitle: 'More Than 26+ Years About Provide Medical.',
-  aboutText:
-    'We are privileged to work with hundreds of future-thinking medial, including many of the world’s top hardware, software, and brands, feel safe and comfortable in establishing.',
-  service:
-    "There are many variations of pass available this medical service the team <a href='#''>READ MORE +</a>",
-  experienceYears: '26+',
-  experienceTitle: 'Experience',
-  videoUrl: 'https://www.youtube.com/embed/rRid6GCJtgc',
-  videoText: 'How We Work',
-  iconboxes: [
-    {
-      imgUrl: '/assets/img/icons/about_icon_1.png',
-      title: 'Client Support',
-      subtitle: 'But must explain to you medical of and pain was.',
-    },
-    {
-      imgUrl: '/assets/img/icons/about_icon_2.png',
-      title: 'Doctor Support',
-      subtitle: 'But must explain to you medical of and pain was.',
-    },
-  ],
-
-  btnUrl: '/about',
-  btnText: 'About More',
-  sectionImgUrl: 'assets/img/about_section_img_1.png',
-  headImgUrl: 'assets/img/about_img_7.jpeg',
-};
-
-const counterData = [
-  {
-    iconSrc: '/assets/img/icons/counter_icon_1.png',
-    countTo: 567,
-    suffix: '+',
-    title: 'Active Clients',
-  },
-  {
-    iconSrc: '/assets/img/icons/counter_icon_2.png',
-    countTo: 23,
-    suffix: 'K+',
-    title: 'Team Support',
-  },
-  {
-    iconSrc: '/assets/img/icons/counter_icon_3.png',
-    countTo: 241,
-    suffix: '+',
-    title: 'Projects Completed',
-  },
-  {
-    iconSrc: '/assets/img/icons/counter_icon_4.png',
-    countTo: 16,
-    suffix: 'K+',
-    title: 'Award winner',
-  },
-];
-
-const teamData = {
-  subtitle: 'OUR TEAM MEMBER',
-  title: ' Meet Our Specialist This <br />Doctor Meeting',
-  sliderData: [
-    {
-      name: 'Dr. Norma Pedric',
-      profession: 'Neurologist',
-      imageUrl: '/assets/img/team_1.jpg',
-      link: '/doctors/doctor-details',
-      facebook: '/',
-      pinterest: '/',
-      twitter: '/',
-      instagram: '/',
-    },
-    {
-      name: 'Dr. James Lewis',
-      profession: 'Neurologist',
-      imageUrl: '/assets/img/team_3.jpg',
-      link: '/doctors/doctor-details',
-      facebook: '/',
-      pinterest: '/',
-      twitter: '/',
-      instagram: '/',
-    },
-    {
-      name: 'Dr. Sophia Anderson',
-      profession: 'Neurologist',
-      imageUrl: '/assets/img/team_4.jpg',
-      link: '/doctors/doctor-details',
-      facebook: '/',
-      pinterest: '/',
-      twitter: '/',
-      instagram: '/',
-    },
-    {
-      name: 'Dr. Michael Thompson',
-      profession: 'Neurologist',
-      imageUrl: 'assets/img/team_5.jpg',
-      link: '/doctors/doctor-details',
-      facebook: '/',
-      pinterest: '/',
-      twitter: '/',
-      instagram: '/',
-    },
-    {
-      name: 'Dr. David Wilson',
-      profession: 'Neurologist',
-      imageUrl: '/assets/img/team_6.jpg',
-      link: '/doctors/doctor-details',
-      facebook: '/',
-      pinterest: '/',
-      twitter: '/',
-      instagram: '/',
-    },
-  ],
-};
-
-const ctaData = {
-  videoLink: 'https://www.youtube.com/embed/rRid6GCJtgc',
-  videoButtonText: 'WATCH VIDEO',
-  subtitle: 'OUR WATCH VIDEO',
-  title: 'Professional Medical Care Measure Medical.',
-  description:
-    'We are privileged to work with hundreds of future-thinking medial, including many of the world’s top hardware, software, and brands , feel safe and comfortable in establishing.',
-  buttonLink: '/contact',
-  buttonText: 'Video More',
-  brandImage: 'assets/img/medical_brand.png',
+  title: 'About Us',
 };
 
 const AboutPage = () => {
   return (
     <div className='about-page-area'>
       <Section
-        className={'cs_page_heading cs_bg_filed cs_center'}
+        className={'cs_page_heading cs_service_inner_banner cs_bg_filed cs_center'}
         backgroundImage="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80"
       >
         <PageHeading data={headingData} />
       </Section>
-      {/* Start About Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="120"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className={'cs_about cs_style_1 position-relative'}
-      >
-        <About data={aboutData} />
-      </Section>
-      {/* End About Section */}
 
-      {/* Start Counter Section */}
+      <section className="gd_about_intro_section">
+        <div className="container">
+          <div className="gd_about_intro_grid">
+            <div>
+              <h2 className="gd_about_intro_title">
+                Welcome to Ghani Dental Clinic - Your Family Dentist in Rawalpindi
+              </h2>
+              <p>
+                At Ghani Dental Care Centre we combine advanced dental technology with genuine
+                compassion and personalized care. Our experienced team delivers gentle, high-quality
+                treatments in a comfortable environment, helping every patient achieve lasting oral
+                health and a confident smile.
+              </p>
+              <p>
+                We offer complete dental care for every age and every need, from routine checkups
+                and cleanings to advanced treatments like implants, root canals, whitening and
+                orthodontics.
+              </p>
+              <a href="https://wa.me/923334425828" target="_blank" rel="noopener noreferrer" className="gd_about_intro_btn">Book Your Dental Consultation</a>
+            </div>
+            <div className="gd_about_intro_image">
+              <img
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
+                alt="Dental treatment in clinic"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <Section
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className="cs_counter_area_2"
-      >
-        <CounterSection2 data={counterData} />
-      </Section>
+      <section className="gd_about_mission_section">
+        <div className="container">
+          <div className="gd_about_mission_grid">
+            <article className="gd_about_mission_card">
+              <div className="gd_about_mission_icon">⚡</div>
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to build long-term relationships with our patients by providing
+                honest, reliable, and high-quality dental care in a comfortable environment.
+              </p>
+            </article>
+            <article className="gd_about_mission_card">
+              <div className="gd_about_mission_icon">◎</div>
+              <h3>Our Vision</h3>
+              <p>
+                Our vision is to become one of the most trusted dental clinics by consistently
+                providing high quality dental care and modern treatments.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-      {/* End Counter Section */}
+      <section className="gd_about_branch_section">
+        <div className="container">
+          <h2 className="gd_about_branch_title">Our Dental Clinic Branch in Rawalpindi</h2>
+          <p className="gd_about_branch_subtitle">
+            Ghani Dental Care Center serves patients from Chungi #8 and nearby areas with
+            modern equipment, experienced dentists, and a comfortable environment.
+          </p>
+          <div className="gd_about_branch_cards">
+            <article className="gd_about_branch_card">
+              <div className="gd_about_branch_pin">📍</div>
+              <h3>Chungi #8 Branch</h3>
+              <p>
+                Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi.
+                Contact: 0333 4425828 | info@ghanidental.com
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-      {/* Start CTA Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="120"
-        className={'cs_cta cs_style_2 cs_blue_bg cs_bg_filed cs_center'}
-        backgroundImage="/assets/img/cta_bg_1.jpeg"
-      >
-        <CtaSection1 data={ctaData} />
-      </Section>
-      {/* End CTA Section */}
-
-      {/* Start Team Section */}
-      <Section
-        topSpaceLg="70"
-        topSpaceMd="110"
-        bottomSpaceLg="80"
-        bottomSpaceMd="0"
-      >
-        <TeamSection
-          hr={true}
-          variant={'cs_pagination cs_style_2'}
-          data={teamData}
-        />
-      </Section>
-      {/* End Team Section */}
-
+      <GdTrustBookingSection />
+      <GdVisitClinicSection />
+      <GdTestimonialsSection />
+      <GdFaqSection />
+      <GdReviewCtaSection />
     </div>
   );
 };

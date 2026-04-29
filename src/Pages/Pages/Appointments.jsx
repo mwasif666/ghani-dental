@@ -1,8 +1,13 @@
 import PageHeading from "../../Components/PageHeading";
 import SectionHeading from "../../Components/SectionHeading";
 import Section from "../../Components/Section";
+import { useEffect } from "react";
 
 const Appointments = () => {
+  useEffect(() => {
+    window.location.href = "https://wa.me/923334425828";
+  }, []);
+
   const headingData = {
     title: "Appointments",
   };

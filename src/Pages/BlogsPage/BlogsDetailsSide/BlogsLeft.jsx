@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 
 const BlogsLeft = ({ data }) => {
   const [rating, setRating] = useState();
+  const handleAppointmentSubmit = (e) => {
+    e.preventDefault();
+    window.open('https://wa.me/923334425828', '_blank', 'noopener,noreferrer');
+  };
   return (
     <>
       <div className="col-lg-8">
@@ -127,6 +131,7 @@ const BlogsLeft = ({ data }) => {
           <form
             className="cs_reply_form row cs_row_gap_30 cs_gap_y_30"
             id="comment"
+            onSubmit={handleAppointmentSubmit}
           >
             <div className="col-md-6">
               <input

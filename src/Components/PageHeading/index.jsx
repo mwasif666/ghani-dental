@@ -1,14 +1,22 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const PageHeading = ({ data }) => {
-  const [urlSegments, setUrlSegments] = useState([]);
-  useEffect(() => {
-    const pathSegments = window.location.pathname
+  const { pathname } = useLocation();
+  const urlSegments = useMemo(() => {
+    const pathSegments = pathname
       .split("/")
       .filter((segment) => segment !== "");
-    setUrlSegments(pathSegments);
-  }, []);
+    return pathSegments;
+  }, [pathname]);
+
+  const prettyText = segment =>
+    segment
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
   return (
     <div className="container">
       <h1 className="cs_page_title">{data?.title}</h1>
@@ -20,10 +28,10 @@ const PageHeading = ({ data }) => {
           <li key={index} className="breadcrumb-item">
             {index < urlSegments.length - 1 ? (
               <Link to={`/${urlSegments.slice(0, index + 1).join("/")}`}>
-                {segment}
+                {prettyText(segment)}
               </Link>
             ) : (
-              <span className="active">{segment}</span>
+              <span className="active">{prettyText(segment)}</span>
             )}
           </li>
         ))}

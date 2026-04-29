@@ -10,7 +10,7 @@ const headingData = {
 
 const contactData = {
   sectionSubtitle: 'CONTACT US',
-  SectionTitle: 'Meet Our Specialist This <br />Doctor Meet',
+  SectionTitle: 'Book Your Dental Consultation',
   teethShapeImg: 'assets/img/icons/hero_shape_3.png',
   contactImg: 'assets/img/contact_2.png',
   iconBox: {
@@ -19,17 +19,29 @@ const contactData = {
     title: 'Emergency Call',
     subtitle: '24/7 – Support and easy',
   },
+  contactDetails: {
+    title: 'Get In Touch With Ghani Dental Clinic',
+    description:
+      'Our team is available to help you with appointments, treatment queries, and emergency dental concerns.',
+    address: 'Shop #6, Muslim Town, Band Khanna Rd, Chungi #8, Rawalpindi',
+    email: 'info@ghanidental.com',
+    phone: '0333 4425828',
+    phoneLink: '03334425828',
+    hours: '24/7 Dental Clinic in Rawalpindi',
+    image:
+      'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80',
+  },
 };
 
 const mapData = {
   mapSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.5851960224!2d-0.2664050245106056!3d51.52852620113951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2z4Kay4Kao4KeN4Kah4KaoLCDgpq_gp4HgppXgp43gpqTgprDgpr7gppzgp43gpq8!5e0!3m2!1sbn!2sbd!4v1723284219451!5m2!1sbn!2sbd',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.1725757236704!2d73.0869873807349!3d33.626767071303746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa9aa8b7e8a28fb3%3A0x5ff3a2ff997f9c0a!2sGhani%20Dental%20Care%20Center!5e0!3m2!1sen!2s!4v1777278508608!5m2!1sen!2s',
 };
 const ContactPage = () => {
   return (
-    <>
+    <div className="gd_contact_page">
       <Section
-        className={'cs_page_heading cs_bg_filed cs_center'}
+        className={'cs_page_heading cs_service_inner_banner cs_bg_filed cs_center'}
         backgroundImage="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80"
       >
         <PageHeading data={headingData} />
@@ -47,7 +59,7 @@ const ContactPage = () => {
       <Section bottomSpaceLg="0" bottomSpaceMd="0">
         <LocationMap mapSrc={mapData.mapSrc} />
       </Section>
-    </>
+    </div>
   );
 };
 

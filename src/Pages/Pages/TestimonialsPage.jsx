@@ -1,23 +1,23 @@
 import PageHeading from '../../Components/PageHeading';
 import Section from '../../Components/Section';
-import { GdServicesSection } from '../../Components/HomeClone/HomeCloneSections';
+import { GdTestimonialsSection } from '../../Components/HomeClone/HomeCloneSections';
 
 const headingData = {
-  title: 'Service',
+  title: 'Testimonials',
 };
 
-const ServicePage = () => {
+const TestimonialsPage = () => {
   return (
-    <>
+    <div className="gd_testimonials_page">
       <Section
         className={'cs_page_heading cs_service_inner_banner cs_bg_filed cs_center'}
         backgroundImage="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80"
       >
         <PageHeading data={headingData} />
       </Section>
-      <GdServicesSection />
-    </>
+      <GdTestimonialsSection />
+    </div>
   );
 };
 
-export default ServicePage;
+export default TestimonialsPage;
