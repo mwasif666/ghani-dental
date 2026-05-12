@@ -2743,14 +2743,14 @@ section.cs_breadcrumb > *,
   background:
     linear-gradient(
       100deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.55) 45%,
-      rgba(0, 0, 0, 0.25) 100%
+      rgba(7, 88, 52, 0.82) 0%,
+      rgba(9, 158, 79, 0.62) 45%,
+      rgba(133, 196, 65, 0.35) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(2, 103, 255, 0.15) 0%,
-      rgba(133, 196, 65, 0.12) 100%
+      rgba(5, 58, 36, 0.22) 0%,
+      rgba(9, 158, 79, 0.18) 100%
     );
   z-index: 0;
   pointer-events: none;
@@ -2765,9 +2765,9 @@ section.cs_breadcrumb > *,
 .cs_hero_slider_thumb_item .cs_hero.cs_style_1::before {
   background: linear-gradient(
     100deg,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.2) 100%
+    rgba(7, 88, 52, 0.82) 0%,
+    rgba(9, 158, 79, 0.62) 50%,
+    rgba(133, 196, 65, 0.35) 100%
   );
 }
 
@@ -2779,13 +2779,13 @@ section.cs_breadcrumb > *,
 .cs_hero.cs_style_1 .cs_hero_title span,
 .cs_hero.cs_style_2 .cs_hero_title span,
 .cs_hero.cs_style_3 .cs_hero_title span {
-  color: #85c441;
+  color: #fff;
 }
 .cs_hero.cs_style_1 .cs_hero_title span::before {
-  background-color: #85c441;
+  background-color: #fff;
 }
 .cs_hero.cs_style_3 .cs_hero_title span {
-  -webkit-text-stroke: 3px #85c441;
+  -webkit-text-stroke: 3px #fff;
 }
 
 /* Hero title & subtitle on dark image – force white for readability */
@@ -2800,7 +2800,7 @@ section.cs_breadcrumb > *,
 .cs_hero.cs_style_1 .cs_hero_subtitle,
 .cs_hero.cs_style_2 .cs_hero_subtitle,
 .cs_hero.cs_style_3 .cs_hero_subtitle {
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
 }
 
 @media (max-width: 991px) {
@@ -2851,7 +2851,7 @@ section.cs_breadcrumb > *,
 }
 .cs_hero.cs_style_1 .cs_hero_info h3,
 .cs_hero.cs_style_1 .cs_hero_info p {
-  color: #85c441;
+  color: #fff;
 }
 
 /* Generic accent text used across pages → swap to green */

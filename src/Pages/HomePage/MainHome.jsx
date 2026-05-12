@@ -606,7 +606,7 @@ const teamData = {
     {
       name: "Dr. Nabila Shaikh",
       profession: "Dental Surgeon BDS, RDS, PMDC: 24584-D",
-      imageUrl: "/assets/img/doctors/doctor4.webp",
+      imageUrl: "/assets/img/doctors/Nabila.jpeg",
       theme: "orange",
       link: "/doctors/doctor-details",
       facebook: "/",

@@ -262,7 +262,7 @@ const dentistsData = [
   },
   {
     name: "Dr. Nabila Shaikh",
-    image: "/assets/img/doctors/no-image.svg",
+    image: "/assets/img/doctors/Nabila.jpeg",
     qualifications: ["Dental Surgeon", "BDS, RDS", "PMDC: 24584-D"],
   },
   {
