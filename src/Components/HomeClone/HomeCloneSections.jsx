@@ -112,40 +112,36 @@ const dentalServices = [
     title: "Dental Implants",
     description:
       "Dental implants are artificial tooth roots made of titanium that are surgically placed into the jawbone beneath the gum line.",
-    image:
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/img%20chnages/Dental-Implant.png",
   },
   {
     title: "Orthodontics",
     description:
       "Teeth are misaligned, orthodontic treatments such as braces or clear aligners might help you achieve a straighter smile.",
-    image: "/assets/img/services/Orthodontics.webp",
+    image: "/assets/img%20chnages/Cosmetic%20Dentistry.jpg",
   },
   {
     title: "Teeth Whitening",
     description:
       "Professional teeth whitening erases years of stains, making your teeth appear brighter and more youthful.",
-    image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/img%20chnages/Teeth-Whitening.jpg",
   },
   {
     title: "Denture",
     description:
       "A denture is a removable replacement for missing teeth and surrounding tissues.",
-    image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/img%20chnages/dentures.jfif",
   },
   {
     title: "Root Canal",
     description: "Dental procedure used to treat infection at the centre of a tooth.",
-    image:
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/img%20chnages/root-canal.jpg",
   },
   {
     title: "Teeth Filling",
     description:
       "Decayed tooth tissue is removed and space filled with a filling material.",
-    image: "/assets/img/services/dental-crown.webp",
+    image: "/assets/img%20chnages/dental-filling.jpg",
   },
 ];
 
@@ -843,6 +839,59 @@ export const GdReviewCtaSection = () => (
 );
 
 /* -----------------------------------------------------------
+ * 10. Client Video Reviews
+ * ----------------------------------------------------------- */
+const videoReviews = [
+  { src: "/assets/reviews/videoplayback.mp4", label: "Patient Review 1" },
+  { src: "/assets/reviews/videoplayback%20(1).mp4", label: "Patient Review 2" },
+  { src: "/assets/reviews/videoplayback%20(2).mp4", label: "Patient Review 3" },
+  { src: "/assets/reviews/videoplayback%20(3).mp4", label: "Patient Review 4" },
+  { src: "/assets/reviews/videoplayback%20(4).mp4", label: "Patient Review 5" },
+];
+
+export const GdVideoReviewsSection = () => (
+  <section className="gd_video_reviews_section">
+    <div className="container">
+      <div className="gd_video_reviews_header">
+        <span className="gd_video_reviews_eyebrow">REAL PATIENTS, REAL RESULTS</span>
+        <h2 className="gd_video_reviews_title">
+          See What Our Patients <span>Say About Us</span>
+        </h2>
+        <p className="gd_video_reviews_subtitle">
+          Watch real feedback from our valued patients and experience the
+          difference Ghani Dental Clinic makes.
+        </p>
+      </div>
+      <div className="gd_video_reviews_grid">
+        {videoReviews.map((v, idx) => (
+          <div key={idx} className="gd_video_review_card">
+            <div className="gd_video_review_thumb">
+              <video
+                src={v.src}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={v.label}
+              />
+            </div>
+            <div className="gd_video_review_footer">
+              <span className="gd_video_review_badge">
+                <FaStar aria-hidden="true" />
+                <FaStar aria-hidden="true" />
+                <FaStar aria-hidden="true" />
+                <FaStar aria-hidden="true" />
+                <FaStar aria-hidden="true" />
+              </span>
+              <span className="gd_video_review_label">Verified Patient</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* -----------------------------------------------------------
  * Aggregator – renders all clone sections in screenshot order
  * ----------------------------------------------------------- */
 const HomeCloneSections = () => (
@@ -853,6 +902,7 @@ const HomeCloneSections = () => (
     <GdTrustBookingSection />
     <GdVisitClinicSection />
     <GdTestimonialsSection />
+    <GdVideoReviewsSection />
     <GdFaqSection />
     <GdBlogsSection />
     <GdReviewCtaSection />
