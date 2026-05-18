@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { serviceOptions } from "../../Pages/Service/serviceContent";
 import {
   FaCheck,
-  FaUser,
   FaStar,
   FaRegStar,
   FaLocationDot,
@@ -98,6 +99,7 @@ const dentalServices = [
       "Dentists specializing in general dentistry provide comprehensive care to patients of all ages, focusing on routine dental exams, cleanings, and treatments.",
     image:
       "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80",
+    link: "/service/general-dentistry",
     featured: true,
   },
   {
@@ -106,6 +108,7 @@ const dentalServices = [
       "Imperfections such as chipped or malformed teeth can be corrected with veneers, bonding, and other cosmetic operations.",
     image:
       "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80",
+    link: "/service/cosmetic-dentistry",
     featured: true,
   },
   {
@@ -113,35 +116,55 @@ const dentalServices = [
     description:
       "Dental implants are artificial tooth roots made of titanium that are surgically placed into the jawbone beneath the gum line.",
     image: "/assets/img%20chnages/Dental-Implant.png",
+    link: "/service/dental-implants",
   },
   {
     title: "Orthodontics",
     description:
       "Teeth are misaligned, orthodontic treatments such as braces or clear aligners might help you achieve a straighter smile.",
     image: "/assets/img%20chnages/Cosmetic%20Dentistry.jpg",
+    link: "/service/braces-orthodontics",
   },
   {
     title: "Teeth Whitening",
     description:
       "Professional teeth whitening erases years of stains, making your teeth appear brighter and more youthful.",
     image: "/assets/img%20chnages/Teeth-Whitening.jpg",
+    link: "/service/teeth-whitening",
   },
   {
     title: "Denture",
     description:
       "A denture is a removable replacement for missing teeth and surrounding tissues.",
     image: "/assets/img%20chnages/dentures.jfif",
+    link: "/service/denture",
   },
   {
     title: "Root Canal",
     description: "Dental procedure used to treat infection at the centre of a tooth.",
     image: "/assets/img%20chnages/root-canal.jpg",
+    link: "/service/root-canal-treatment",
   },
   {
     title: "Teeth Filling",
     description:
       "Decayed tooth tissue is removed and space filled with a filling material.",
     image: "/assets/img%20chnages/dental-filling.jpg",
+    link: "/service/dental-fillings",
+  },
+  {
+    title: "Crown & Bridge",
+    description:
+      "Restore your smile with durable and natural-looking crowns and bridges for damaged, weak, or missing teeth.",
+    image: "/assets/img%20chnages/crown%20and%20bridge.jpg",
+    link: "/service/crown-bridge",
+  },
+  {
+    title: "Teeth Aligners",
+    description:
+      "Straighten your teeth comfortably with customized clear aligners that improve smile alignment discreetly.",
+    image: "/assets/img%20chnages/teeth%20aligner.jpg",
+    link: "/service/teeth-aligners",
   },
 ];
 
@@ -186,13 +209,10 @@ export const GdServicesSection = () => {
                   <div className="gd_service_body">
                     <h4 className="gd_service_title">{service.title}</h4>
                     <p className="gd_service_text">{service.description}</p>
-                    <a
-                      href="/service/service-details"
-                      className="gd_service_link"
-                    >
+                    <Link to={service.link} className="gd_service_link">
                       <span>Read More</span>
                       <FaArrowRight aria-hidden="true" />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -215,13 +235,10 @@ export const GdServicesSection = () => {
               <div className="gd_service_body">
                 <h4 className="gd_service_title">{service.title}</h4>
                 <p className="gd_service_text">{service.description}</p>
-                <a
-                  href="/service/service-details"
-                  className="gd_service_link"
-                >
+                <Link to={service.link} className="gd_service_link">
                   <span>Read More</span>
                   <FaArrowRight aria-hidden="true" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
@@ -352,12 +369,11 @@ export const GdTrustBookingSection = () => {
                   <option value="" disabled>
                     Select A Service
                   </option>
-                  <option value="general">General Dentistry</option>
-                  <option value="cosmetic">Cosmetic Dentistry</option>
-                  <option value="implants">Dental Implants</option>
-                  <option value="orthodontics">Orthodontics</option>
-                  <option value="whitening">Teeth Whitening</option>
-                  <option value="root">Root Canal</option>
+                  {serviceOptions.map(service => (
+                    <option key={service.slug} value={service.slug}>
+                      {service.title}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="gd_booking_field">

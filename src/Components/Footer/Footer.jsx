@@ -46,11 +46,12 @@ const data = {
     { text: 'Scaling & Polishing', href: '/service/scaling-polishing' },
     { text: 'Tooth Extraction', href: '/service/tooth-extraction' },
     { text: 'Root Canal Treatment', href: '/service/root-canal-treatment' },
-    { text: 'Crowns & Bridges', href: '/service/crowns-bridges' },
+    { text: 'Crown & Bridge', href: '/service/crown-bridge' },
     { text: 'Teeth Whitening', href: '/service/teeth-whitening' },
     { text: 'Dental Implants', href: '/service/dental-implants' },
     { text: 'Dental Fillings', href: '/service/dental-fillings' },
     { text: 'Braces & Orthodontics', href: '/service/braces-orthodontics' },
+    { text: 'Teeth Aligners', href: '/service/teeth-aligners' },
   ],
 };
 

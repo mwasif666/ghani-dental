@@ -6,14 +6,6 @@ import HomeV3 from './Pages/HomePage/HomeV3';
 import AboutPage from './Pages/AboutPage/AboutPage';
 import ServicePage from './Pages/Service/ServicePage';
 import ServiceDetails from './Pages/Service/ServiceDetails';
-import BracesOrthodonticsPage from './Pages/Service/BracesOrthodonticsPage';
-import DentalFillingsPage from './Pages/Service/DentalFillingsPage';
-import ToothExtractionPage from './Pages/Service/ToothExtractionPage';
-import ScalingPolishingPage from './Pages/Service/ScalingPolishingPage';
-import RootCanalTreatmentPage from './Pages/Service/RootCanalTreatmentPage';
-import TeethWhiteningPage from './Pages/Service/TeethWhiteningPage';
-import DentalImplantsPage from './Pages/Service/DentalImplantsPage';
-import CrownsBridgesPage from './Pages/Service/CrownsBridgesPage';
 import BlogsPage from './Pages/BlogsPage/BlogsPage';
 import BlogsDetails from './Pages/BlogsPage/BlogsDetails';
 import DoctorsPage from './Pages/Pages/DoctorsPage';
@@ -55,14 +47,6 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/service" element={<ServicePage />} />
-          <Route path="/service/braces-orthodontics" element={<BracesOrthodonticsPage />} />
-          <Route path="/service/dental-fillings" element={<DentalFillingsPage />} />
-          <Route path="/service/tooth-extraction" element={<ToothExtractionPage />} />
-          <Route path="/service/scaling-polishing" element={<ScalingPolishingPage />} />
-          <Route path="/service/root-canal-treatment" element={<RootCanalTreatmentPage />} />
-          <Route path="/service/teeth-whitening" element={<TeethWhiteningPage />} />
-          <Route path="/service/dental-implants" element={<DentalImplantsPage />} />
-          <Route path="/service/crowns-bridges" element={<CrownsBridgesPage />} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
           <Route path="/blog" element={<BlogsPage />} />
           <Route path="/blog/:blogId" element={<BlogsDetails />} />

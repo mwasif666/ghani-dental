@@ -1,7 +1,8 @@
-import React from "react";
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
+import { useParams } from "react-router-dom";
 import PageHeading from "../../Components/PageHeading";
 import Section from "../../Components/Section";
+import { getServiceDetails, serviceOptions } from "./serviceContent";
 
 const trustPoints = [
   "5000+ Happy Patients who keep coming back",
@@ -10,11 +11,12 @@ const trustPoints = [
 ];
 
 const ServiceDetails = ({ data }) => {
+  const { serviceId } = useParams();
   const handleSubmit = (e) => {
     e.preventDefault();
     window.open("https://wa.me/923334425828", "_blank", "noopener,noreferrer");
   };
-  const serviceData = data || {
+  const serviceData = data || getServiceDetails(serviceId) || {
     title: "Service",
     bannerImage:
       "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80",
@@ -23,7 +25,12 @@ const ServiceDetails = ({ data }) => {
     introTitle: "Service Details",
     introDescription: "Please select a service from the services menu.",
     introCta: "Explore Our Dental Services",
+    benefitsHeading: "Complete Dental Care for Healthy Smiles",
+    benefits: [],
   };
+  const benefits = serviceData.benefits || [];
+  const leftBenefits = benefits.filter((_, index) => index % 2 === 0);
+  const rightBenefits = benefits.filter((_, index) => index % 2 === 1);
   const headingData = {
     title: serviceData.title,
   };
@@ -84,12 +91,11 @@ const ServiceDetails = ({ data }) => {
                     <option value="" disabled>
                       Select A Service
                     </option>
-                    <option value="general">General Dentistry</option>
-                    <option value="cosmetic">Cosmetic Dentistry</option>
-                    <option value="implants">Dental Implants</option>
-                    <option value="orthodontics">Orthodontics</option>
-                    <option value="whitening">Teeth Whitening</option>
-                    <option value="root">Root Canal</option>
+                    {serviceOptions.map(service => (
+                      <option key={service.slug} value={service.slug}>
+                        {service.title}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="gd_booking_field">
@@ -123,88 +129,39 @@ const ServiceDetails = ({ data }) => {
       <section className="gd_service_benefits_section">
         <div className="container">
           <h2 className="gd_service_benefits_heading">
-            Comprehensive General Dentistry
-            <br />
-            for Healthy Smiles
+            {serviceData.benefitsHeading}
           </h2>
 
           <div className="gd_service_benefits_grid">
             <div className="gd_service_benefits_col">
-              <article className="gd_service_benefit_card">
-                <h3>Preventive Care for Long-Term Health</h3>
-                <p>
-                  Sealants, fluoride treatments, and oral health education are
-                  critical tools for protecting teeth, particularly in
-                  youngsters, against decay and damage. Our experts are focused
-                  on lasting results.
-                </p>
-              </article>
-              <article className="gd_service_benefit_card">
-                <h3>Improved Quality of Life</h3>
-                <p>
-                  Patients benefit from greater oral health, improved chewing,
-                  and a higher quality of life when dental problems are avoided.
-                  You can achieve this with our credible general dentistry
-                  services.
-                </p>
-              </article>
-              <article className="gd_service_benefit_card">
-                <h3>Routine Checkups and Cleanings.</h3>
-                <p>
-                  Regular visits to a general dentist assist in maintaining oral
-                  hygiene and detect early symptoms of problems such as cavities
-                  or gum disease before they progress.
-                </p>
-              </article>
-              <article className="gd_service_benefit_card">
-                <h3>Treatment</h3>
-                <p>
-                  General dentists provide a variety of treatments to address
-                  dental problems such as fillings, dental crowns and bridges
-                  for damaged teeth, root canals for infected teeth, and
-                  extractions.
-                </p>
-              </article>
+              {leftBenefits.map((benefit, index) => (
+                <article className="gd_service_benefit_card" key={index}>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.text}</p>
+                </article>
+              ))}
             </div>
 
             <div className="gd_service_benefits_center">
               <img
                 className="gd_service_benefits_img_back"
-                src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80"
-                alt="Dental treatment closeup"
+                src={serviceData.introImage}
+                alt={`${serviceData.title} treatment`}
               />
               <img
                 className="gd_service_benefits_img_front"
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80"
-                alt="Dentist and patient smiling"
+                src={serviceData.secondaryImage || serviceData.bannerImage}
+                alt={`${serviceData.title} result`}
               />
             </div>
 
             <div className="gd_service_benefits_col">
-              <article className="gd_service_benefit_card">
-                <h3>Emergency Care</h3>
-                <p>
-                  General dentists are often available for dental emergencies,
-                  such as toothaches, broken teeth, or dental trauma.
-                </p>
-              </article>
-              <article className="gd_service_benefit_card">
-                <h3>Early Detection Saves Time and Money</h3>
-                <p>
-                  General dentistry ensures that possible issues are identified
-                  early on, eliminating the need for more intrusive and costly
-                  procedures later on. At Oradent Dental Care, we consider
-                  everything to make your money value.
-                </p>
-              </article>
-              <article className="gd_service_benefit_card">
-                <h3>Collaboration with Specialists</h3>
-                <p>
-                  If specialized care is needed (e.g., orthodontics, oral
-                  surgery), general dentists coordinate referrals and collaborate
-                  with specialists to ensure comprehensive treatment plans.
-                </p>
-              </article>
+              {rightBenefits.map((benefit, index) => (
+                <article className="gd_service_benefit_card" key={index}>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
